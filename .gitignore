@@ -40,5 +40,6 @@ tags
 coverage/**
 doc/**
 
-# Other
+# RSpec stuff
 .rspec_status
+spec/examples.txt

@@ -28,5 +28,6 @@ module PlatoDashboard
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.autoload_paths << "#{Rails.root}/app/adapters"
+    config.autoload_paths << "#{Rails.root}/app/models/external_services"
   end
 end
