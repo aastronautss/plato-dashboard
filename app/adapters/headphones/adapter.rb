@@ -28,7 +28,7 @@ module Headphones
 
     def find_artist(params = {})
       hashes = deserialize(client.find_artist(params)).map(&:with_indifferent_access)
-      hashes
+      hashes.map { |props| Headphones::ArtistSearchResult.new(props) }
     end
 
     private

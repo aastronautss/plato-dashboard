@@ -13,7 +13,7 @@ RSpec.describe Headphones::Adapter, :vcr do
 
   subject { Headphones::Adapter.new service }
 
-  # method_missing stuff
+  # delegation to Hphones lib
 
   describe '#respond_to?' do
     it 'passes stuff through to the Hphones client' do
@@ -45,8 +45,11 @@ RSpec.describe Headphones::Adapter, :vcr do
     end
 
     it 'has Artist objects in the array' do
-      expect(action.first).to respond_to(:name)
-      expect(action.first).to respond_to(:id)
+      result = action
+
+      expect(result.first).to respond_to(:name)
+      expect(result.first).to respond_to(:id)
+      expect(result.first).to respond_to(:score)
     end
   end
 end
