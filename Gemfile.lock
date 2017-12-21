@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/aastronautss/hphones-ruby.git
-  revision: 950510772c5b0e6506d5afbe26fd293bed702748
+  revision: f90ca5b79dfa2b978cb8aca7c7fe15f62a365f36
   branch: master
   specs:
     hphones-ruby (0.0.1)
@@ -80,7 +80,7 @@ GEM
       temple (>= 0.8.0)
       tilt
     hashdiff (0.3.7)
-    hashie (3.5.6)
+    hashie (3.5.7)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     json (2.1.0)

@@ -63,4 +63,12 @@ RSpec.describe Headphones::Adapter, :vcr do
       expect(result.first).to respond_to(:score)
     end
   end
+
+  describe '#add_artist' do
+    let(:action) { subject.add_artist id: 'fc7bbf00-fbaa-4736-986b-b3ac0266ca9b' }
+
+    it 'returns a successful result' do
+      expect(action).to be(true)
+    end
+  end
 end

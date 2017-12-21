@@ -4,8 +4,7 @@ require 'hphones'
 
 module Headphones
   ##
-  # An API wrapper for the Headphones API gem. At this point, it's just a straight pass-through, but as the app evolves
-  # I can add more functionality.
+  # An API wrapper for the Headphones API gem. By default, passes stuff straight through to the Hphones gem.
   #
   class Adapter
     def initialize(service)
@@ -34,6 +33,10 @@ module Headphones
     def get_artist(params = {})
       props = deserialize(client.get_artist(params)).with_indifferent_access
       Headphones::Artist.from_get_artist_call props
+    end
+
+    def add_artist(params = {})
+      deserialize(client.add_artist(params))
     end
 
     private
