@@ -71,4 +71,12 @@ RSpec.describe Headphones::Adapter, :vcr do
       expect(action).to be(true)
     end
   end
+
+  describe '#add_album' do
+    let(:action) { subject.add_album id: '8a103b36-a632-425f-8980-da934b0c1eb3' }
+
+    it 'returns a successful result' do
+      expect(action).to be(true)
+    end
+  end
 end
