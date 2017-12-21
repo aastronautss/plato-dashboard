@@ -31,6 +31,11 @@ module Headphones
       hashes.map { |props| Headphones::ArtistSearchResult.new(props) }
     end
 
+    def get_artist(params = {})
+      props = deserialize(client.get_artist(params)).with_indifferent_access
+      Headphones::Artist.from_get_artist_call props
+    end
+
     private
 
     attr_reader :client

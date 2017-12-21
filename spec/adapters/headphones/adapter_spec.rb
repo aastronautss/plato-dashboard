@@ -37,6 +37,17 @@ RSpec.describe Headphones::Adapter, :vcr do
 
   # Implemented methods
 
+  describe '#get_artist' do
+    let(:action) { subject.get_artist id: 'fc7bbf00-fbaa-4736-986b-b3ac0266ca9b' }
+
+    it 'returns an Artist object' do
+      result = action
+
+      expect(result).to respond_to(:name)
+      expect(result).to respond_to(:id)
+    end
+  end
+
   describe '#find_artist' do
     let(:action) { subject.find_artist name: 'alt j' }
 

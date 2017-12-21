@@ -16,6 +16,9 @@ Metrics/LineLength:
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
