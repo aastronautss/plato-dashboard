@@ -1,0 +1,136 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://<HOST>:<PORT>/api?apikey=<API_KEY>&cmd=findArtist&name=alt%20j
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 21 Dec 2017 04:54:05 GMT
+      Content-Length:
+      - '9813'
+      Content-Type:
+      - text/html;charset=utf-8
+      Server:
+      - CherryPy/3.6.0
+    body:
+      encoding: UTF-8
+      string: '[{"url": "http://musicbrainz.org/artist/fc7bbf00-fbaa-4736-986b-b3ac0266ca9b",
+        "score": 100, "name": "alt-J", "uniquename": "alt-J (\u2206)", "id": "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b"},
+        {"url": "http://musicbrainz.org/artist/30651a7f-4936-4a29-a263-2ffa3eac21f8",
+        "score": 57, "name": "ALT", "uniquename": "ALT (BEMANI)", "id": "30651a7f-4936-4a29-a263-2ffa3eac21f8"},
+        {"url": "http://musicbrainz.org/artist/4f294f8d-59af-47d1-97bd-7024c2c44f66",
+        "score": 57, "name": "A.L.T.", "uniquename": "A.L.T. (Mexican-American rapper
+        Alvin Trivette)", "id": "4f294f8d-59af-47d1-97bd-7024c2c44f66"}, {"url": "http://musicbrainz.org/artist/bf6f190a-c14a-4dac-8fd2-50a768177217",
+        "score": 57, "name": "Alt", "uniquename": "Alt (Rock)", "id": "bf6f190a-c14a-4dac-8fd2-50a768177217"},
+        {"url": "http://musicbrainz.org/artist/b500fb6b-3209-4689-9ef9-02eaaa489843",
+        "score": 57, "name": "ALT", "uniquename": "ALT (one-off pop collaboration)",
+        "id": "b500fb6b-3209-4689-9ef9-02eaaa489843"}, {"url": "http://musicbrainz.org/artist/ad32129a-eb08-4e25-a3cc-e39cb7d3d79a",
+        "score": 36, "name": "alt/land", "uniquename": "alt/land", "id": "ad32129a-eb08-4e25-a3cc-e39cb7d3d79a"},
+        {"url": "http://musicbrainz.org/artist/1c4d60ac-e2f1-4ae1-921a-fdbe0d6ed8fe",
+        "score": 36, "name": "Alt, Pico", "uniquename": "Alt, Pico", "id": "1c4d60ac-e2f1-4ae1-921a-fdbe0d6ed8fe"},
+        {"url": "http://musicbrainz.org/artist/efc19cdb-86ab-4710-9ce5-b9f3ecbdb611",
+        "score": 36, "name": "Alt, Bernhard", "uniquename": "Alt, Bernhard (Austrian
+        double-bass player and composer)", "id": "efc19cdb-86ab-4710-9ce5-b9f3ecbdb611"},
+        {"url": "http://musicbrainz.org/artist/ea0717b1-42b0-4120-ba39-40e13981856d",
+        "score": 36, "name": "Alt-Generation", "uniquename": "Alt-Generation", "id":
+        "ea0717b1-42b0-4120-ba39-40e13981856d"}, {"url": "http://musicbrainz.org/artist/f44a11fa-1067-4873-88dd-2b43444fcc31",
+        "score": 36, "name": "Alt Schuss", "uniquename": "Alt Schuss", "id": "f44a11fa-1067-4873-88dd-2b43444fcc31"},
+        {"url": "http://musicbrainz.org/artist/9bd94d30-d4e2-49ab-912a-da6c0a37304c",
+        "score": 36, "name": "Alt Loc", "uniquename": "Alt Loc (Gili Hadar)", "id":
+        "9bd94d30-d4e2-49ab-912a-da6c0a37304c"}, {"url": "http://musicbrainz.org/artist/6f1bd22a-220e-47f9-9a56-76b115031188",
+        "score": 36, "name": "Alt Fenster", "uniquename": "Alt Fenster", "id": "6f1bd22a-220e-47f9-9a56-76b115031188"},
+        {"url": "http://musicbrainz.org/artist/65fedf84-6683-45f2-b204-6165f1b63c1f",
+        "score": 36, "name": "(Alt) Bro", "uniquename": "(Alt) Bro", "id": "65fedf84-6683-45f2-b204-6165f1b63c1f"},
+        {"url": "http://musicbrainz.org/artist/002b8778-ce60-44ea-acae-81058c80bbd9",
+        "score": 36, "name": "Alt Track", "uniquename": "Alt Track", "id": "002b8778-ce60-44ea-acae-81058c80bbd9"},
+        {"url": "http://musicbrainz.org/artist/12878571-50fb-4949-83fd-79e36a39312e",
+        "score": 36, "name": "Alt Senior", "uniquename": "Alt Senior", "id": "12878571-50fb-4949-83fd-79e36a39312e"},
+        {"url": "http://musicbrainz.org/artist/a69f3e2d-8575-402c-93e0-9c1688cf7aac",
+        "score": 36, "name": "Alt, Stefan", "uniquename": "Alt, Stefan", "id": "a69f3e2d-8575-402c-93e0-9c1688cf7aac"},
+        {"url": "http://musicbrainz.org/artist/dd66a258-efd7-4dc4-890b-b6b44ebe64fb",
+        "score": 36, "name": "Alt Take", "uniquename": "Alt Take", "id": "dd66a258-efd7-4dc4-890b-b6b44ebe64fb"},
+        {"url": "http://musicbrainz.org/artist/fa2840d8-f1c2-428e-ab0b-18741582fb33",
+        "score": 36, "name": "Jo Alt", "uniquename": "Jo Alt", "id": "fa2840d8-f1c2-428e-ab0b-18741582fb33"},
+        {"url": "http://musicbrainz.org/artist/dcf965b5-322c-4898-a639-f46d53083967",
+        "score": 36, "name": "Alt G", "uniquename": "Alt G (Founder Pablo Alvear,
+        Chile)", "id": "dcf965b5-322c-4898-a639-f46d53083967"}, {"url": "http://musicbrainz.org/artist/ac2f5702-9cbb-4c8b-8fb6-6d53adac5e27",
+        "score": 36, "name": "Alt, Anne", "uniquename": "Alt, Anne", "id": "ac2f5702-9cbb-4c8b-8fb6-6d53adac5e27"},
+        {"url": "http://musicbrainz.org/artist/395ad74c-978c-4a6c-b7b5-581abb399bf4",
+        "score": 36, "name": "Alt, Claude", "uniquename": "Alt, Claude", "id": "395ad74c-978c-4a6c-b7b5-581abb399bf4"},
+        {"url": "http://musicbrainz.org/artist/9534d860-f63f-47a7-abdf-ed9d0551d02d",
+        "score": 36, "name": "Alt, Susanne", "uniquename": "Alt, Susanne", "id": "9534d860-f63f-47a7-abdf-ed9d0551d02d"},
+        {"url": "http://musicbrainz.org/artist/79598811-ca67-40f9-b74c-02b53039d9fb",
+        "score": 36, "name": "Alt, Jason", "uniquename": "Alt, Jason", "id": "79598811-ca67-40f9-b74c-02b53039d9fb"},
+        {"url": "http://musicbrainz.org/artist/d831dfbb-1297-4041-b518-9fd76a7fe339",
+        "score": 36, "name": "Alt-G", "uniquename": "Alt-G", "id": "d831dfbb-1297-4041-b518-9fd76a7fe339"},
+        {"url": "http://musicbrainz.org/artist/03894c1e-46b6-49e8-9ec1-76ffd204e588",
+        "score": 36, "name": "Alt, Tobias", "uniquename": "Alt, Tobias", "id": "03894c1e-46b6-49e8-9ec1-76ffd204e588"},
+        {"url": "http://musicbrainz.org/artist/87c29194-dd60-4a07-b8ba-d3f18fcdfeb2",
+        "score": 36, "name": "Alt+F4", "uniquename": "Alt+F4", "id": "87c29194-dd60-4a07-b8ba-d3f18fcdfeb2"},
+        {"url": "http://musicbrainz.org/artist/1e8b063e-1c93-4a78-beca-66cad7906ca0",
+        "score": 36, "name": "Alt, Arno", "uniquename": "Alt, Arno (German Singer,
+        Folk Pop)", "id": "1e8b063e-1c93-4a78-beca-66cad7906ca0"}, {"url": "http://musicbrainz.org/artist/94998daa-744d-48cb-87bc-ba15d2aee86f",
+        "score": 36, "name": "Alt Link", "uniquename": "Alt Link", "id": "94998daa-744d-48cb-87bc-ba15d2aee86f"},
+        {"url": "http://musicbrainz.org/artist/8e8e9801-c995-412b-8e39-123ded6e93aa",
+        "score": 36, "name": "Alt Anesis", "uniquename": "Alt Anesis", "id": "8e8e9801-c995-412b-8e39-123ded6e93aa"},
+        {"url": "http://musicbrainz.org/artist/684deffc-2574-4d2f-9052-5b6757d5513f",
+        "score": 28, "name": "ALT*CTRL System", "uniquename": "ALT*CTRL System", "id":
+        "684deffc-2574-4d2f-9052-5b6757d5513f"}, {"url": "http://musicbrainz.org/artist/fe3fe735-2683-47e7-93f0-622ef46136a4",
+        "score": 28, "name": "Takk for Alt", "uniquename": "Takk for Alt", "id": "fe3fe735-2683-47e7-93f0-622ef46136a4"},
+        {"url": "http://musicbrainz.org/artist/d9d95d63-6b38-405e-b6fd-2d359093dae4",
+        "score": 28, "name": "Control Alt Supp", "uniquename": "Control Alt Supp",
+        "id": "d9d95d63-6b38-405e-b6fd-2d359093dae4"}, {"url": "http://musicbrainz.org/artist/8a89024c-3db6-4526-9df4-fe19dae5345e",
+        "score": 28, "name": "Alt + Ctrl", "uniquename": "Alt + Ctrl", "id": "8a89024c-3db6-4526-9df4-fe19dae5345e"},
+        {"url": "http://musicbrainz.org/artist/d08d3519-75b7-4c80-acbe-a4a2ac195900",
+        "score": 28, "name": "ctrl-alt-del", "uniquename": "ctrl-alt-del", "id": "d08d3519-75b7-4c80-acbe-a4a2ac195900"},
+        {"url": "http://musicbrainz.org/artist/85b19394-1fa1-4feb-9d81-e73cc06fc180",
+        "score": 28, "name": "Alt-Ctrl-Sleep", "uniquename": "Alt-Ctrl-Sleep", "id":
+        "85b19394-1fa1-4feb-9d81-e73cc06fc180"}, {"url": "http://musicbrainz.org/artist/cf6cc79f-1271-47b6-838d-b4ec957e7bb3",
+        "score": 28, "name": "Control Alt Deus", "uniquename": "Control Alt Deus",
+        "id": "cf6cc79f-1271-47b6-838d-b4ec957e7bb3"}, {"url": "http://musicbrainz.org/artist/a940f4e3-c291-4535-9b3d-c7dfb5ba1f47",
+        "score": 28, "name": "Alt, Susanne, Quartet", "uniquename": "Alt, Susanne,
+        Quartet", "id": "a940f4e3-c291-4535-9b3d-c7dfb5ba1f47"}, {"url": "http://musicbrainz.org/artist/6c3a6380-39a6-495e-986a-de352648f0bb",
+        "score": 28, "name": "Ctrl Alt Awesome", "uniquename": "Ctrl Alt Awesome",
+        "id": "6c3a6380-39a6-495e-986a-de352648f0bb"}, {"url": "http://musicbrainz.org/artist/e5f70203-f5c4-4c1f-8cad-0d85214c7043",
+        "score": 28, "name": "alt of the society", "uniquename": "alt of the society",
+        "id": "e5f70203-f5c4-4c1f-8cad-0d85214c7043"}, {"url": "http://musicbrainz.org/artist/6b12cc13-4653-4550-b811-8b13741ce193",
+        "score": 28, "name": "ALT(\u857eP)", "uniquename": "ALT(\u857eP)", "id": "6b12cc13-4653-4550-b811-8b13741ce193"},
+        {"url": "http://musicbrainz.org/artist/e7199914-0714-4839-aad4-0badbdf6bc55",
+        "score": 28, "name": "Simon-Alt, Jutta", "uniquename": "Simon-Alt, Jutta",
+        "id": "e7199914-0714-4839-aad4-0badbdf6bc55"}, {"url": "http://musicbrainz.org/artist/e47d7de7-961c-443d-a729-4b0d1dadb7bb",
+        "score": 28, "name": "Esc, Ctrl Alt", "uniquename": "Esc, Ctrl Alt", "id":
+        "e47d7de7-961c-443d-a729-4b0d1dadb7bb"}, {"url": "http://musicbrainz.org/artist/1a2c94dc-04d2-48a5-9bdb-55a8f156d636",
+        "score": 28, "name": "CTRL ALT DEL", "uniquename": "CTRL ALT DEL (Chris Lawrence)",
+        "id": "1a2c94dc-04d2-48a5-9bdb-55a8f156d636"}, {"url": "http://musicbrainz.org/artist/67a2c36e-a8c2-4467-9d57-58e858e47770",
+        "score": 28, "name": "Ctrl Alt Del", "uniquename": "Ctrl Alt Del (UK dubstep/industrial
+        band)", "id": "67a2c36e-a8c2-4467-9d57-58e858e47770"}, {"url": "http://musicbrainz.org/artist/e69a218e-7785-454f-b338-7795a910b5d6",
+        "score": 28, "name": "CTRL_ALT_DSTRY", "uniquename": "CTRL_ALT_DSTRY", "id":
+        "e69a218e-7785-454f-b338-7795a910b5d6"}, {"url": "http://musicbrainz.org/artist/6a26700e-b07e-4f86-9f26-34c08ac31a6b",
+        "score": 28, "name": "Alt An Tagen", "uniquename": "Alt An Tagen", "id": "6a26700e-b07e-4f86-9f26-34c08ac31a6b"},
+        {"url": "http://musicbrainz.org/artist/5cf76d5f-d9c3-4838-b9f1-fbf8118e8856",
+        "score": 28, "name": "Kid Alt Dub", "uniquename": "Kid Alt Dub", "id": "5cf76d5f-d9c3-4838-b9f1-fbf8118e8856"},
+        {"url": "http://musicbrainz.org/artist/613eee53-e663-4f0f-9447-48c5584bd997",
+        "score": 28, "name": "Alt-Wiener Strauss Ensemble", "uniquename": "Alt-Wiener
+        Strauss Ensemble", "id": "613eee53-e663-4f0f-9447-48c5584bd997"}, {"url":
+        "http://musicbrainz.org/artist/a61d73ab-528a-4329-b24f-af808ca4024d", "score":
+        25, "name": "Singekreis VCP Gau Alt-Burgund", "uniquename": "Singekreis VCP
+        Gau Alt-Burgund", "id": "a61d73ab-528a-4329-b24f-af808ca4024d"}, {"url": "http://musicbrainz.org/artist/4de738b9-4311-45a2-8bb9-284ae9954d47",
+        "score": 25, "name": "A.L.T. & The Lost Civilization", "uniquename": "A.L.T.
+        & The Lost Civilization", "id": "4de738b9-4311-45a2-8bb9-284ae9954d47"}]'
+    http_version: 
+  recorded_at: Thu, 21 Dec 2017 04:54:06 GMT
+recorded_with: VCR 4.0.0

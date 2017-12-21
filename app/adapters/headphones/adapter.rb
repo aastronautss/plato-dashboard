@@ -8,12 +8,10 @@ module Headphones
   # I can add more functionality.
   #
   class Adapter
-    HOST = ENV['HEADPHONES_HOST']
-    PORT = ENV['HEADPHONES_PORT']
-    API_KEY = ENV['HEADPHONES_API_KEY']
-
-    def initialize
-      @client = Hphones.new(host: HOST, port: PORT, api_key: API_KEY)
+    def initialize(service)
+      @client = Hphones.new(
+        host: service.host, port: service.port, http_root: service.http_root, api_key: service.api_key
+      )
     end
 
     def method_missing(mth, *args, &blk)
@@ -26,6 +24,11 @@ module Headphones
 
     def respond_to_missing?(mth, *)
       client.respond_to?(mth) || super
+    end
+
+    def find_artist(params = {})
+      hashes = deserialize(client.find_artist(params)).map(&:with_indifferent_access)
+      hashes
     end
 
     private
