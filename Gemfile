@@ -24,7 +24,7 @@ gem 'webpacker'
 gem 'activerecord_json_validator'
 gem 'bcrypt', '~> 3.1.7'
 gem 'hashie'
-gem 'redis', '~> 3.0'
+gem 'redis', '~> 4.0'
 gem 'turbolinks', '~> 5'
 
 # Use Capistrano for deployment
