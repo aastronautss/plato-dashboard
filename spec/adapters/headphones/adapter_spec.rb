@@ -3,13 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Headphones::Adapter, :vcr do
-  let(:service) do
-    instance_double MusicDownloadService,
-      host: ENV['HEADPHONES_HOST'],
-      port: ENV['HEADPHONES_PORT'],
-      http_root: ENV['HEADPHONES_HTTP_ROOT'],
-      api_key: ENV['HEADPHONES_API_KEY']
-  end
+  let(:service) { build_stubbed :music_download_service }
 
   subject { Headphones::Adapter.new service }
 

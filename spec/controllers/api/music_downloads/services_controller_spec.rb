@@ -8,20 +8,7 @@ RSpec.describe Api::MusicDownloads::ServicesController do
   end
 
   describe 'POST :create' do
-    let(:params) do
-      {
-        music_download_service: {
-          name: 'Headphones',
-          label: 'Headphones',
-          data: {
-            host: ENV['HEADPHONES_HOST'],
-            port: ENV['HEADPHONES_PORT'],
-            http_root: ENV['HEADPHONES_HTTP_ROOT'],
-            api_key: ENV['HEADPHONES_API_KEY']
-          }
-        }
-      }
-    end
+    let(:params) { { music_download_service: attributes_for(:music_download_service) } }
     let(:action) { post :create, format: :json, params: params }
 
     it 'creates a new ExternalService' do

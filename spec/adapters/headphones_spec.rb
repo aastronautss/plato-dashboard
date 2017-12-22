@@ -6,7 +6,7 @@ RSpec.describe Headphones do
   describe '.new' do
     subject { Headphones }
 
-    let(:service) { double 'service', host: 'localhost', port: 123, http_root: 'hello', api_key: 'abc' }
+    let(:service) { build_stubbed :music_download_service }
     let(:action) { subject.new service }
 
     it 'returns an Adapter' do

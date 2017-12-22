@@ -36,6 +36,8 @@ gem 'hphones-ruby', github: 'aastronautss/hphones-ruby', branch: 'master'
 group :development, :test do
   gem 'rspec-rails'
 
+  gem 'factory_bot_rails'
+
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-rails'
 
