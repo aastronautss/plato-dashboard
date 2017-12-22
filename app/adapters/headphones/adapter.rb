@@ -45,7 +45,11 @@ module Headphones
     end
 
     def add_album(params = {})
-      deserialize client.add_album(params)
+      deserialize client.queue_album(params)
+    end
+
+    def remove_album(params = {})
+      deserialize client.unqueue_album(params)
     end
 
     private

@@ -1,17 +1,16 @@
 # frozen_string_literal: true
 
-class Api::MusicDownloads::AlbumsController < ApplicationController
+##
+# Interface for finding and choosing releases.
+#
+class Api::MusicDownloads::AlbumReleasesController < ApplicationController
   before_action :set_service
 
-  def search
+  def index
     # TODO
   end
 
-  def index
-    # TODO - upcoming
-  end
-
-  def show
+  def choose
     # TODO
   end
 

@@ -9,7 +9,8 @@ module Headphones
       :title, :release_date, :type,
       :critic_score, :user_score,
       :artwork_thumbnail_url, :artwork_url,
-      :status
+      :status,
+      :artist
 
     def initialize(props = {})
       @id = props[:id]
