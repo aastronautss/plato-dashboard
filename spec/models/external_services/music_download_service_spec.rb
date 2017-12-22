@@ -4,14 +4,14 @@ require 'rails_helper'
 
 RSpec.describe MusicDownloadService do
   subject do
-    MusicDownloadService.new name: 'Headphones',
+    MusicDownloadService.new app: 'Headphones',
       data: { host: 'localhost', port: 123, http_root: 'abc', api_key: 'abc123' }
   end
 
-  describe '.names' do
+  describe '.apps' do
     subject { MusicDownloadService }
 
-    let(:action) { subject.names }
+    let(:action) { subject.apps }
 
     it 'returns an array' do
       expect(action).to be_an(Array)

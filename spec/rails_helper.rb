@@ -12,6 +12,8 @@ require 'support/factory_bot'
 require 'support/shoulda_matchers'
 require 'support/vcr'
 
+Dir[Rails.root.join('spec/support/shared_examples/**/*.rb')].each { |f| require f }
+
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!

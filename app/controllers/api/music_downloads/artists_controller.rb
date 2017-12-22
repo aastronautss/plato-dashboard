@@ -7,6 +7,10 @@ class Api::MusicDownloads::ArtistsController < ApplicationController
     @artists = @service.adapter.get_index
   end
 
+  def search
+    @results = @service.adapter.find_artist name: params[:q]
+  end
+
   private
 
   def set_service

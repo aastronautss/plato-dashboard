@@ -18,8 +18,8 @@ class Api::MusicDownloads::ServicesController < ApplicationController
 
   def service_params
     params.require(:music_download_service).permit(
-      :name, :label,
-      data: [:host, :port, :http_root, :api_key]
+      :app, :label,
+      data: [:protocol, :host, :port, :http_root, :api_key]
     )
   end
 end
