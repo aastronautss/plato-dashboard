@@ -19,10 +19,6 @@ class MusicDownloadService < ExternalService
     alias available_services names
   end
 
-  def data
-    read_attribute(:data).with_indifferent_access
-  end
-
   def host
     data[:host]
   end

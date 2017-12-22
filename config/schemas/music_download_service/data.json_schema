@@ -1,12 +1,12 @@
 {
   "type": "object",
-  "$schema": "http://json-schema.org/draft-07/schema",
+  "$schema": "http://json-schema.org/draft-04/schema",
   "properties": {
     "protocol": { "type": "string" },
-    "server_host": { "type": "string" },
-    "server_port": { "type": "integer" },
-    "server_http_root": { "type": "string" },
+    "host": { "type": "string" },
+    "port": { "type": ["integer", "string"] },
+    "http_root": { "type": "string" },
     "api_key": { "type": "string" }
   },
-  "required": ["server_host", "server_port", "api_key"]
+  "required": ["host", "port", "api_key"]
 }

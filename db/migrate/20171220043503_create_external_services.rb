@@ -5,6 +5,7 @@ class CreateExternalServices < ActiveRecord::Migration[5.1]
     create_table :external_services do |t|
       t.string :type, null: false
       t.string :name, null: false
+      t.string :label
       t.jsonb :data
 
       t.timestamps

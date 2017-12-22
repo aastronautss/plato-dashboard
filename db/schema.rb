@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20171220043503) do
   create_table "external_services", force: :cascade do |t|
     t.string "type", null: false
     t.string "name", null: false
+    t.string "label"
     t.jsonb "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
