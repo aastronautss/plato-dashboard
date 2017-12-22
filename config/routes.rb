@@ -7,12 +7,12 @@ Rails.application.routes.draw do
       resources :services, only: [:index, :create] do
         resources :artists, only: [:show] do
           collection do
+            resources :artist_registrations, path: 'registrations', only: [:index, :create]
             get :search
           end
         end
 
         resources :albums, only: [:index, :show, :create]
-        resources :artist_registrations, only: [:index, :create]
       end
     end
   end

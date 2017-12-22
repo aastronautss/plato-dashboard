@@ -25,6 +25,11 @@ module Headphones
       client.respond_to?(mth) || super
     end
 
+    def get_index(params = {})
+      hashes = deserialize(client.get_index(params)).map(&:with_indifferent_access)
+      hashes.map { |props| Headphones::Artist.new(props) }
+    end
+
     def find_artist(params = {})
       hashes = deserialize(client.find_artist(params)).map(&:with_indifferent_access)
       hashes.map { |props| Headphones::ArtistSearchResult.new(props) }

@@ -21,7 +21,7 @@ class Api::MusicDownloads::ArtistRegistrationsController < ApplicationController
     @service = MusicDownloadService.find params[:service_id]
   end
 
-  def artist_params
+  def registration_params
     params.require(:registration).permit(:id)
   end
 end

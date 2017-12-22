@@ -9,6 +9,12 @@ class Api::MusicDownloads::ArtistsController < ApplicationController
     head :no_content # TODO
   end
 
+  def show
+    @artist = @service.adapter.get_artist id: params[:id]
+
+    head :no_content # TODO
+  end
+
   private
 
   def set_service
