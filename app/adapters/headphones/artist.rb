@@ -7,7 +7,7 @@ module Headphones
   # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
   class Artist
     class << self
-      def from_get_artist_call(props = {})
+      def from_api(props = {})
         albums = props[:albums] || []
 
         description_hash = props[:description]&.first || {}

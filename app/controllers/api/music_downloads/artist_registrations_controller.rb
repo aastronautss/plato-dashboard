@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+##
+# Interface for registering and deregistering artists.
+#
 class Api::MusicDownloads::ArtistRegistrationsController < ApplicationController
   before_action :set_service
 

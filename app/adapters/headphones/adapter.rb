@@ -27,17 +27,17 @@ module Headphones
 
     def get_index(params = {})
       hashes = deserialize(client.get_index(params)).map(&:with_indifferent_access)
-      hashes.map { |props| Headphones::Artist.new(props) }
+      hashes.map { |props| Headphones::Artist.from_api props }
     end
 
     def find_artist(params = {})
       hashes = deserialize(client.find_artist(params)).map(&:with_indifferent_access)
-      hashes.map { |props| Headphones::ArtistSearchResult.new(props) }
+      hashes.map { |props| Headphones::ArtistSearchResult.new props }
     end
 
     def get_artist(params = {})
       props = deserialize(client.get_artist(params)).with_indifferent_access
-      Headphones::Artist.from_get_artist_call props
+      Headphones::Artist.from_api props
     end
 
     def add_artist(params = {})

@@ -23,13 +23,30 @@ RSpec.describe Headphones::Adapter, :vcr do
     end
   end
 
-  describe '#get_index' do
+  describe '#get_similar' do
+    let(:action) { subject.get_similar }
+
     it 'returns something' do
-      expect(subject.get_index).to be_an(Object)
+      expect(action).to be_an(Object)
     end
   end
 
   # Implemented methods
+
+  describe '#get_index' do
+    let(:action) { subject.get_index }
+
+    it 'returns an enumerable' do
+      expect(action).to respond_to(:each)
+    end
+
+    it 'has Artist objects' do
+      result = action
+
+      expect(result.first).to respond_to(:name)
+      expect(result.first).to respond_to(:id)
+    end
+  end
 
   describe '#get_artist' do
     let(:action) { subject.get_artist id: 'fc7bbf00-fbaa-4736-986b-b3ac0266ca9b' }
