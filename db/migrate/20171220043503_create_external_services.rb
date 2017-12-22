@@ -4,7 +4,7 @@ class CreateExternalServices < ActiveRecord::Migration[5.1]
   def change
     create_table :external_services do |t|
       t.string :type, null: false
-      t.string :app, null: false
+      t.integer :app, null: false
       t.string :label
       t.jsonb :data
 
