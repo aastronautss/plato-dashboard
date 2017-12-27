@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 22 Dec 2017 02:40:43 GMT
+      - Wed, 27 Dec 2017 03:36:53 GMT
       Content-Length:
       - '9813'
       Content-Type:
@@ -67,10 +67,10 @@ http_interactions:
         "score": 36, "name": "Jo Alt", "uniquename": "Jo Alt", "id": "fa2840d8-f1c2-428e-ab0b-18741582fb33"},
         {"url": "http://musicbrainz.org/artist/dcf965b5-322c-4898-a639-f46d53083967",
         "score": 36, "name": "Alt G", "uniquename": "Alt G (Founder Pablo Alvear,
-        Chile)", "id": "dcf965b5-322c-4898-a639-f46d53083967"}, {"url": "http://musicbrainz.org/artist/ac2f5702-9cbb-4c8b-8fb6-6d53adac5e27",
-        "score": 36, "name": "Alt, Anne", "uniquename": "Alt, Anne", "id": "ac2f5702-9cbb-4c8b-8fb6-6d53adac5e27"},
-        {"url": "http://musicbrainz.org/artist/395ad74c-978c-4a6c-b7b5-581abb399bf4",
+        Chile)", "id": "dcf965b5-322c-4898-a639-f46d53083967"}, {"url": "http://musicbrainz.org/artist/395ad74c-978c-4a6c-b7b5-581abb399bf4",
         "score": 36, "name": "Alt, Claude", "uniquename": "Alt, Claude", "id": "395ad74c-978c-4a6c-b7b5-581abb399bf4"},
+        {"url": "http://musicbrainz.org/artist/ac2f5702-9cbb-4c8b-8fb6-6d53adac5e27",
+        "score": 36, "name": "Alt, Anne", "uniquename": "Alt, Anne", "id": "ac2f5702-9cbb-4c8b-8fb6-6d53adac5e27"},
         {"url": "http://musicbrainz.org/artist/9534d860-f63f-47a7-abdf-ed9d0551d02d",
         "score": 36, "name": "Alt, Susanne", "uniquename": "Alt, Susanne", "id": "9534d860-f63f-47a7-abdf-ed9d0551d02d"},
         {"url": "http://musicbrainz.org/artist/79598811-ca67-40f9-b74c-02b53039d9fb",
@@ -83,10 +83,10 @@ http_interactions:
         "score": 36, "name": "Alt+F4", "uniquename": "Alt+F4", "id": "87c29194-dd60-4a07-b8ba-d3f18fcdfeb2"},
         {"url": "http://musicbrainz.org/artist/1e8b063e-1c93-4a78-beca-66cad7906ca0",
         "score": 36, "name": "Alt, Arno", "uniquename": "Alt, Arno (German Singer,
-        Folk Pop)", "id": "1e8b063e-1c93-4a78-beca-66cad7906ca0"}, {"url": "http://musicbrainz.org/artist/94998daa-744d-48cb-87bc-ba15d2aee86f",
-        "score": 36, "name": "Alt Link", "uniquename": "Alt Link", "id": "94998daa-744d-48cb-87bc-ba15d2aee86f"},
-        {"url": "http://musicbrainz.org/artist/8e8e9801-c995-412b-8e39-123ded6e93aa",
+        Folk Pop)", "id": "1e8b063e-1c93-4a78-beca-66cad7906ca0"}, {"url": "http://musicbrainz.org/artist/8e8e9801-c995-412b-8e39-123ded6e93aa",
         "score": 36, "name": "Alt Anesis", "uniquename": "Alt Anesis", "id": "8e8e9801-c995-412b-8e39-123ded6e93aa"},
+        {"url": "http://musicbrainz.org/artist/94998daa-744d-48cb-87bc-ba15d2aee86f",
+        "score": 36, "name": "Alt Link", "uniquename": "Alt Link", "id": "94998daa-744d-48cb-87bc-ba15d2aee86f"},
         {"url": "http://musicbrainz.org/artist/684deffc-2574-4d2f-9052-5b6757d5513f",
         "score": 28, "name": "ALT*CTRL System", "uniquename": "ALT*CTRL System", "id":
         "684deffc-2574-4d2f-9052-5b6757d5513f"}, {"url": "http://musicbrainz.org/artist/fe3fe735-2683-47e7-93f0-622ef46136a4",
@@ -121,16 +121,17 @@ http_interactions:
         "score": 28, "name": "CTRL_ALT_DSTRY", "uniquename": "CTRL_ALT_DSTRY", "id":
         "e69a218e-7785-454f-b338-7795a910b5d6"}, {"url": "http://musicbrainz.org/artist/6a26700e-b07e-4f86-9f26-34c08ac31a6b",
         "score": 28, "name": "Alt An Tagen", "uniquename": "Alt An Tagen", "id": "6a26700e-b07e-4f86-9f26-34c08ac31a6b"},
-        {"url": "http://musicbrainz.org/artist/5cf76d5f-d9c3-4838-b9f1-fbf8118e8856",
-        "score": 28, "name": "Kid Alt Dub", "uniquename": "Kid Alt Dub", "id": "5cf76d5f-d9c3-4838-b9f1-fbf8118e8856"},
         {"url": "http://musicbrainz.org/artist/613eee53-e663-4f0f-9447-48c5584bd997",
         "score": 28, "name": "Alt-Wiener Strauss Ensemble", "uniquename": "Alt-Wiener
         Strauss Ensemble", "id": "613eee53-e663-4f0f-9447-48c5584bd997"}, {"url":
-        "http://musicbrainz.org/artist/a61d73ab-528a-4329-b24f-af808ca4024d", "score":
-        25, "name": "Singekreis VCP Gau Alt-Burgund", "uniquename": "Singekreis VCP
-        Gau Alt-Burgund", "id": "a61d73ab-528a-4329-b24f-af808ca4024d"}, {"url": "http://musicbrainz.org/artist/4de738b9-4311-45a2-8bb9-284ae9954d47",
-        "score": 25, "name": "A.L.T. & The Lost Civilization", "uniquename": "A.L.T.
-        & The Lost Civilization", "id": "4de738b9-4311-45a2-8bb9-284ae9954d47"}]'
+        "http://musicbrainz.org/artist/5cf76d5f-d9c3-4838-b9f1-fbf8118e8856", "score":
+        28, "name": "Kid Alt Dub", "uniquename": "Kid Alt Dub", "id": "5cf76d5f-d9c3-4838-b9f1-fbf8118e8856"},
+        {"url": "http://musicbrainz.org/artist/a61d73ab-528a-4329-b24f-af808ca4024d",
+        "score": 25, "name": "Singekreis VCP Gau Alt-Burgund", "uniquename": "Singekreis
+        VCP Gau Alt-Burgund", "id": "a61d73ab-528a-4329-b24f-af808ca4024d"}, {"url":
+        "http://musicbrainz.org/artist/4de738b9-4311-45a2-8bb9-284ae9954d47", "score":
+        25, "name": "A.L.T. & The Lost Civilization", "uniquename": "A.L.T. & The
+        Lost Civilization", "id": "4de738b9-4311-45a2-8bb9-284ae9954d47"}]'
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 02:40:48 GMT
+  recorded_at: Wed, 27 Dec 2017 03:36:54 GMT
 recorded_with: VCR 4.0.0

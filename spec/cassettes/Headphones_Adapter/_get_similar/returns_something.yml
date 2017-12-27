@@ -19,41 +19,16 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 22 Dec 2017 06:55:59 GMT
+      - Wed, 27 Dec 2017 03:37:30 GMT
       Content-Length:
-      - '2394'
+      - '2'
       Content-Type:
       - text/html;charset=utf-8
       Server:
       - CherryPy/3.6.0
     body:
       encoding: UTF-8
-      string: '[{"Count": 4, "ArtistName": "Paul McCartney & Wings", "ArtistID": "d922d727-240a-4432-9a88-05a7cf9bc403"},
-        {"Count": 4, "ArtistName": "Paul McCartney", "ArtistID": "ba550d0e-adac-4864-b88b-407cab5e76af"},
-        {"Count": 3, "ArtistName": "Silver Jews", "ArtistID": "1bc2d696-c0e2-480d-87ed-17b2a82d7983"},
-        {"Count": 3, "ArtistName": "Stephen Malkmus", "ArtistID": "eaefd603-84c1-4db4-a72b-0cb718a0cc07"},
-        {"Count": 3, "ArtistName": "Led Zeppelin", "ArtistID": "d6e0e274-8e19-44ce-b5b2-52c12f8a674a"},
-        {"Count": 3, "ArtistName": "Liz Phair", "ArtistID": "149326c2-b8a3-48e3-b3d2-9b5b9593127f"},
-        {"Count": 4, "ArtistName": "The Byrds", "ArtistID": "2819834e-4e08-47b0-a2c4-b7672318e8f0"},
-        {"Count": 4, "ArtistName": "Wings", "ArtistID": "f64a18dd-af21-4efe-bf78-3a6a8c829702"},
-        {"Count": 3, "ArtistName": "Billy Joel", "ArtistID": "64b94289-9474-4d43-8c93-918ccc1920d1"},
-        {"Count": 3, "ArtistName": "Eric Clapton", "ArtistID": "618b6900-0618-4f1e-b835-bccb17f84294"},
-        {"Count": 3, "ArtistName": "Rod Stewart", "ArtistID": "a35237a0-4f47-40a6-b6f3-1e786db23402"},
-        {"Count": 4, "ArtistName": "Electric Light Orchestra", "ArtistID": "0c502791-4ee9-4c5f-9696-0602b721ff3b"},
-        {"Count": 4, "ArtistName": "Badfinger", "ArtistID": "44632683-c340-44de-a65d-328212559f91"},
-        {"Count": 4, "ArtistName": "The Band", "ArtistID": "a0ef7e1d-44ff-4039-9435-7d5fefdeecc9"},
-        {"Count": 3, "ArtistName": "Smog", "ArtistID": "a2caf598-c303-4832-8de9-d6432fa7435e"},
-        {"Count": 3, "ArtistName": "Yes", "ArtistID": "c1d4f2ba-cf39-460c-9528-6b827d3417a1"},
-        {"Count": 4, "ArtistName": "George Harrison", "ArtistID": "42a8f507-8412-4611-854f-926571049fa0"},
-        {"Count": 3, "ArtistName": "Cream", "ArtistID": "be212372-2e70-429a-bd5c-86239716edc4"},
-        {"Count": 3, "ArtistName": "Queen", "ArtistID": "420ca290-76c5-41af-999e-564d7c71f1a7"},
-        {"Count": 4, "ArtistName": "Simon & Garfunkel", "ArtistID": "5d02f264-e225-41ff-83f7-d9b1f0b1874a"},
-        {"Count": 4, "ArtistName": "The Kinks", "ArtistID": "f53888c9-8bdc-4cc3-b2ab-ddab6bc5afb7"},
-        {"Count": 4, "ArtistName": "Elton John", "ArtistID": "b83bc61f-8451-4a5d-8b8e-7e9ed295e822"},
-        {"Count": 3, "ArtistName": "Tom Petty and The Heartbreakers", "ArtistID":
-        "f93dbc64-6f08-4033-bcc7-8a0bb4689849"}, {"Count": 3, "ArtistName": "The Yardbirds",
-        "ArtistID": "191de76f-a224-445d-b041-54df16d65bf7"}, {"Count": 4, "ArtistName":
-        "John Lennon", "ArtistID": "4d5447d7-c61c-4120-ba1b-d7f471d385b9"}]'
+      string: "[]"
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 06:55:59 GMT
+  recorded_at: Wed, 27 Dec 2017 03:37:30 GMT
 recorded_with: VCR 4.0.0

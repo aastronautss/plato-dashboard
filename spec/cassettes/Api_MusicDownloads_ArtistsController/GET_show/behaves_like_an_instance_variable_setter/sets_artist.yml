@@ -19,72 +19,16 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 22 Dec 2017 06:40:49 GMT
+      - Wed, 27 Dec 2017 03:36:42 GMT
       Content-Length:
-      - '4868'
+      - '47'
       Content-Type:
       - text/html;charset=utf-8
       Server:
       - CherryPy/3.6.0
     body:
       encoding: UTF-8
-      string: '{"albums": [{"Status": "Downloaded", "AlbumASIN": "B06XC47DPB", "DateAdded":
-        "2017-03-06", "AlbumTitle": "Relaxer", "UserScore": "7.1", "ArtistName": "alt-J",
-        "ThumbURL": null, "ReleaseCountry": null, "ReleaseDate": "2017-06-02", "AlbumID":
-        "8a103b36-a632-425f-8980-da934b0c1eb3", "ArtistID": "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b",
-        "ArtworkURL": null, "ReleaseFormat": null, "SearchTerm": null, "CriticScore":
-        "65", "ReleaseID": "8a103b36-a632-425f-8980-da934b0c1eb3", "Type": "Album"},
-        {"Status": "Downloaded", "AlbumASIN": "B00KTHA0O0", "DateAdded": "2016-07-21",
-        "AlbumTitle": "This Is All Yours", "UserScore": "7.5", "ArtistName": "alt-J",
-        "ThumbURL": "https://lastfm-img2.akamaized.net/i/u/64s/336e206f9bca4d44cd17c51f90b09385.png",
-        "ReleaseCountry": null, "ReleaseDate": "2014-09-18", "AlbumID": "23f52d25-a4bd-4b1f-9d7e-62dd47cdf375",
-        "ArtistID": "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b", "ArtworkURL": "https://lastfm-img2.akamaized.net/i/u/arQ/336e206f9bca4d44cd17c51f90b09385.png",
-        "ReleaseFormat": null, "SearchTerm": null, "CriticScore": "70", "ReleaseID":
-        "23f52d25-a4bd-4b1f-9d7e-62dd47cdf375", "Type": "Album"}, {"Status": "Downloaded",
-        "AlbumASIN": "B007RX330C", "DateAdded": "2016-07-21", "AlbumTitle": "An Awesome
-        Wave", "UserScore": "8.5", "ArtistName": "alt-J", "ThumbURL": "https://lastfm-img2.akamaized.net/i/u/64s/4bbd6ca7059b413c80d6a31a818b835b.png",
-        "ReleaseCountry": null, "ReleaseDate": "2012-05-28", "AlbumID": "0d8562eb-7f72-427b-8a0b-984cc5ee7766",
-        "ArtistID": "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b", "ArtworkURL": "https://lastfm-img2.akamaized.net/i/u/arQ/4bbd6ca7059b413c80d6a31a818b835b.png",
-        "ReleaseFormat": null, "SearchTerm": null, "CriticScore": "71", "ReleaseID":
-        "0d8562eb-7f72-427b-8a0b-984cc5ee7766", "Type": "Album"}], "description":
-        [{"LastUpdated": "2017-12-21", "Summary": "Alt-J (sometimes stylised \u2206)
-        was formed when Gwil Sainsbury (guitar, bass), Joe Newman (guitar, vocals),
-        Gus Unger-Hamilton (keyboards), and Thom Sonny Green (drums) met at Leeds,
-        UK University in 2007. The band currently resides in Cambridge.\n\nUnger-Hamilton
-        studied English Literature; the other three Fine Art. In their second year
-        of studies, Newman showed Sainsbury a handful of his own songs inspired by
-        his guitar-playing dad and hallucinogens <a href=\"https://www.last.fm/music/alt-J\">Read
-        more on Last.fm</a>", "Content": "Alt-J (sometimes stylised \u2206) was formed
-        when Gwil Sainsbury (guitar, bass), Joe Newman (guitar, vocals), Gus Unger-Hamilton
-        (keyboards), and Thom Sonny Green (drums) met at Leeds, UK University in 2007.
-        The band currently resides in Cambridge.\n\nUnger-Hamilton studied English
-        Literature; the other three Fine Art. In their second year of studies, Newman
-        showed Sainsbury a handful of his own songs inspired by his guitar-playing
-        dad and hallucinogens, and the pair began recording in their dorm rooms with
-        Sainsbury acting as producer on Garageband. \n\nFirst as Daljit Dhaliwal and
-        then as Films, they spent the next two years playing around town. Their eponymous
-        first 4-track demo \u2206, was recorded with producer Charlie Andrew in London
-        and included early versions of \"Breezeblocks\", \"Hand-Made\", \"Matilda\"
-        and \"Tessellate\".\n\nTheir first 2012 release for Infectious was the triangle
-        shaped 7\" \"Matilda\" / \"Fitzpleasure\", followed by \"Breezeblocks\" as
-        an advance of their first album An Awesome Wave, released on 25 May 2012.
-        That same year, they won the prestigious Barclaycard Mercury Prize for An
-        Awesome Wave.\n\nOn January 2014, Sainsbury announced that he had left the
-        band. \"Hunger of the Pine\" was released in June, with an accompanying video.
-        Their second record, This is All Yours was released in September 2014.\n\nhttp://altjband.com   <a
-        href=\"https://www.last.fm/music/alt-J\">Read more on Last.fm</a>. User-contributed
-        text is available under the Creative Commons By-SA License; additional terms
-        may apply.", "ReleaseID": null, "ArtistID": "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b",
-        "ReleaseGroupID": null}], "artist": [{"Status": "Active", "ThumbURL": "https://lastfm-img2.akamaized.net/i/u/64s/8b8d3af575df4871c8c512776fc36276.png",
-        "DateAdded": "2017-12-21", "MetaCritic": "[{\"user_score\": \"7.5\", \"critic_score\":
-        \"70\", \"title\": \"This Is All Yours\"}, {\"user_score\": \"8.5\", \"critic_score\":
-        \"71\", \"title\": \"An Awesome Wave\"}, {\"user_score\": \"7.1\", \"critic_score\":
-        \"65\", \"title\": \"Relaxer\"}]", "TotalTracks": 35, "Type": null, "IncludeExtras":
-        0, "ArtistName": "alt-J", "LastUpdated": "2017-12-21 22:37:08", "ReleaseDate":
-        "2017-06-02", "AlbumID": "8a103b36-a632-425f-8980-da934b0c1eb3", "ArtistID":
-        "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b", "ArtworkURL": "https://lastfm-img2.akamaized.net/i/u/300x300/8b8d3af575df4871c8c512776fc36276.png",
-        "Extras": "", "HaveTracks": 33, "LatestAlbum": "Relaxer", "ArtistSortName":
-        "alt-J"}]}'
+      string: '{"albums": [], "description": [], "artist": []}'
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 06:40:49 GMT
+  recorded_at: Wed, 27 Dec 2017 03:36:42 GMT
 recorded_with: VCR 4.0.0
