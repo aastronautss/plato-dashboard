@@ -36,3 +36,6 @@ Style/ClassAndModuleChildren:
 
 Layout/EmptyLinesAroundArguments:
   Enabled: false
+
+Layout/IndentHash:
+  EnforcedStyle: consistent

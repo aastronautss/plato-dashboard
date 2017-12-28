@@ -72,7 +72,8 @@ module Headphones
 
       @status = props[:status]
 
-      @artist = populate_artist(props[:artist]) if props[:artist]
+      artist_props = props[:artist]
+      @artist = populate_artist(artist_props) if artist_props
     end
 
     private

@@ -98,12 +98,14 @@ module Headphones
     end
 
     def format_get_album_props(props)
-      props[:album][0].merge({
-        'Summary' => props[:description][0]['Summary'],
-        'Description' => props[:description][0]['Description'],
+      description_props = props[:description][0]
+
+      props[:album][0].merge(
+        'Summary' => description_props['Summary'],
+        'Description' => description_props['Description'],
 
         tracks: props[:tracks]
-      }).with_indifferent_access
+      ).with_indifferent_access
     end
   end
 end
