@@ -27,7 +27,8 @@ module Headphones
 
           status: props['Status'],
 
-          artist: format_artist(props)
+          artist: format_artist(props),
+          tracks: format_tracks(props)
         }.with_indifferent_access
 
         new(formatted_props)
@@ -40,6 +41,10 @@ module Headphones
           id: props['ArtistID'],
           name: props['ArtistName']
         }.with_indifferent_access
+      end
+
+      def format_tracks(props)
+        props[:tracks]
       end
     end
 

@@ -19,16 +19,34 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 27 Dec 2017 03:37:15 GMT
+      - Thu, 28 Dec 2017 05:02:24 GMT
       Content-Length:
-      - '2'
+      - '1705'
       Content-Type:
       - text/html;charset=utf-8
       Server:
       - CherryPy/3.6.0
     body:
       encoding: UTF-8
-      string: "[]"
+      string: '[{"Status": "Active", "ThumbURL": "https://lastfm-img2.akamaized.net/i/u/64s/cb9a96ebc059fcb12d4804a38f199ad6.png",
+        "DateAdded": "2017-12-27", "MetaCritic": "[{\"user_score\": \"7.5\", \"critic_score\":
+        \"70\", \"title\": \"This Is All Yours\"}, {\"user_score\": \"8.5\", \"critic_score\":
+        \"71\", \"title\": \"An Awesome Wave\"}, {\"user_score\": \"7.1\", \"critic_score\":
+        \"65\", \"title\": \"Relaxer\"}]", "TotalTracks": 35, "Type": null, "IncludeExtras":
+        0, "ArtistName": "alt-J", "LastUpdated": "2017-12-27 19:35:00", "ReleaseDate":
+        "2017-06-02", "AlbumID": "8a103b36-a632-425f-8980-da934b0c1eb3", "ArtistID":
+        "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b", "ArtworkURL": "https://lastfm-img2.akamaized.net/i/u/300x300/cb9a96ebc059fcb12d4804a38f199ad6.png",
+        "Extras": "", "HaveTracks": 0, "LatestAlbum": "Relaxer", "ArtistSortName":
+        "alt-J"}, {"Status": "Active", "ThumbURL": "https://lastfm-img2.akamaized.net/i/u/64s/3b603f3ef57e2d7dc3f67a616e926d69.png",
+        "DateAdded": "2017-12-27", "MetaCritic": "[{\"user_score\": \"7.9\", \"critic_score\":
+        \"80\", \"title\": \"Stay Gold\"}, {\"user_score\": \"8.4\", \"critic_score\":
+        \"70\", \"title\": \"The Big Black And The Blue\"}, {\"user_score\": \"8.7\",
+        \"critic_score\": \"81\", \"title\": \"The Lion''s Roar\"}]", "TotalTracks":
+        43, "Type": null, "IncludeExtras": 0, "ArtistName": "First Aid Kit", "LastUpdated":
+        "2017-12-27 19:35:08", "ReleaseDate": "2018-01-19", "AlbumID": "2db65b00-baa9-454d-b4a5-9f9e6f239cd1",
+        "ArtistID": "373faa02-74d7-4b1d-9b47-7574ad510f8d", "ArtworkURL": "https://lastfm-img2.akamaized.net/i/u/300x300/3b603f3ef57e2d7dc3f67a616e926d69.png",
+        "Extras": "", "HaveTracks": 0, "LatestAlbum": "Ruins", "ArtistSortName": "First
+        Aid Kit"}]'
     http_version: 
-  recorded_at: Wed, 27 Dec 2017 03:37:15 GMT
+  recorded_at: Thu, 28 Dec 2017 05:02:24 GMT
 recorded_with: VCR 4.0.0

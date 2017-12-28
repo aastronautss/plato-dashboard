@@ -169,4 +169,12 @@ RSpec.describe Headphones::Adapter, :vcr do
       expect(action).to be(true)
     end
   end
+
+  describe '#get_album_releases' do
+    let(:action) { subject.get_album_releases id: '8a103b36-a632-425f-8980-da934b0c1eb3' }
+
+    it 'returns an array of releases' do
+      expect(action).to respond_to(:each)
+    end
+  end
 end

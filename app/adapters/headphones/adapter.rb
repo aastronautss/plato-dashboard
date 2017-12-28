@@ -26,8 +26,10 @@ module Headphones
     end
 
     def get_index(params = {})
-      hashes = deserialize(client.get_index(params)).map(&:with_indifferent_access)
-      hashes.map { |props| Headphones::Artist.from_api props }
+      deserialize(client.get_index(params)).map do |artist_hash|
+        formatted_props = format_get_index_props(artist_hash)
+        Headphones::Artist.from_api formatted_props
+      end
     end
 
     def find_artist(params = {})
@@ -75,6 +77,14 @@ module Headphones
       deserialize client.unqueue_album(params)
     end
 
+    def get_album_releases(params = {})
+      deserialize client.choose_specific_download(params)
+    end
+
+    def choose_album_release(params = {})
+      deserialize client.download_specific_release(params)
+    end
+
     private
 
     attr_reader :client
@@ -83,19 +93,17 @@ module Headphones
       response.data
     end
 
-    # def format_get_artist_params(props)
-    #   props[:artist][0].merge({
-
-    #   })
-    # end
+    def format_get_index_props(props)
+      { artist: [props] }
+    end
 
     def format_get_album_props(props)
       props[:album][0].merge({
         'Summary' => props[:description][0]['Summary'],
         'Description' => props[:description][0]['Description'],
 
-        'Tracks' => props[:tracks]
-      })
+        tracks: props[:tracks]
+      }).with_indifferent_access
     end
   end
 end
