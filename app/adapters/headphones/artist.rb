@@ -13,7 +13,7 @@ module Headphones
         description_hash = props[:description]&.first || {}
         artist_hash = props[:artist]&.first || {}
 
-        props = {
+        formatted_props = {
           id: artist_hash['ArtistId'],
           name: artist_hash['ArtistName'],
 
@@ -30,7 +30,7 @@ module Headphones
           albums: format_albums(albums)
         }.with_indifferent_access
 
-        new(props)
+        new(formatted_props)
       end
 
       private

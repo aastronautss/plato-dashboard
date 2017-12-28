@@ -13,7 +13,13 @@ class Api::MusicDownloads::ArtistRegistrationsController < ApplicationController
   end
 
   def create
-    result = @service.adapter.add_artist registration_params
+    @service.adapter.add_artist registration_params
+
+    head :no_content # TODO
+  end
+
+  def destroy
+    @service.adapter.add_artist id: params[:id]
 
     head :no_content # TODO
   end

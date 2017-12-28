@@ -7,17 +7,19 @@ class Api::MusicDownloads::AlbumRegistrationsController < ApplicationController
   before_action :set_service
 
   def index
-    # TODO - wanted
+    @albums = @service.adapter.get_wanted
+
+    head :no_content # TODO
   end
 
   def create
-    result = @service.adapter.add_album registration_params
+    @service.adapter.add_album registration_params
 
     head :no_content # TODO
   end
 
   def destroy
-    result = @service.adapter.remove_album registration_params
+    @service.adapter.remove_album id: params[:id]
 
     head :no_content # TODO
   end

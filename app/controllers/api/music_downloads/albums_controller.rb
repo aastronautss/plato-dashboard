@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+##
+# Find and interact with MusicDownloads albums
+#
 class Api::MusicDownloads::AlbumsController < ApplicationController
   before_action :set_service
 
@@ -8,7 +11,7 @@ class Api::MusicDownloads::AlbumsController < ApplicationController
   end
 
   def index
-    # TODO - upcoming
+    # TODO: upcoming
   end
 
   def show

@@ -44,6 +44,10 @@ module Headphones
       deserialize client.add_artist(params)
     end
 
+    def get_wanted(params = {})
+      deserialize client.get_wanted(params)
+    end
+
     def add_album(params = {})
       deserialize client.queue_album(params)
     end

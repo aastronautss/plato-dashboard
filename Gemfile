@@ -38,7 +38,7 @@ group :development, :test do
 
   gem 'factory_bot_rails'
 
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
 
   gem 'dotenv-rails'
@@ -63,4 +63,4 @@ group :test do
   gem 'webmock'
 end
 
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

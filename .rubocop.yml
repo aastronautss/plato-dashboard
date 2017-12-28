@@ -26,3 +26,13 @@ Layout/MultilineOperationIndentation:
 
 Style/DoubleNegation:
   Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'app/controllers/**/*'
+
+Layout/EmptyLinesAroundArguments:
+  Enabled: false

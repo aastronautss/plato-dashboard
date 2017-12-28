@@ -4,7 +4,42 @@ module Headphones
   ##
   # A duck-type data object for a music album.
   #
+  # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
   class Album
+    class << self
+      def from_api(props = {})
+        formatted_props = {
+          id: props['AlbumID'],
+          asin: props['AlbumASIN'],
+
+          title: props['AlbumTitle'],
+          release_date: props['ReleaseDate'],
+          type: props['Type'],
+
+          critic_score: props['CriticScore'],
+          user_score: props['UserScore'],
+
+          artwork_thumbnail_url: props['ThumbURL'],
+          artwork_url: props['ArtworkURL'],
+
+          status: props['Status'],
+
+          artist: format_artist(props)
+        }.with_indifferent_access
+
+        new(formatted_props)
+      end
+
+      private
+
+      def format_artist(props)
+        {
+          id: props['ArtistID'],
+          name: props['ArtistName']
+        }.with_indifferent_access
+      end
+    end
+
     attr_reader :id, :asin,
       :title, :release_date, :type,
       :critic_score, :user_score,
@@ -27,6 +62,15 @@ module Headphones
       @artwork_url = props[:artwork_url]
 
       @status = props[:status]
+
+      @artist = populate_artist(props[:artist]) if props[:artist]
+    end
+
+    private
+
+    def populate_artist(props)
+      Headphones::Artist.new(props)
     end
   end
+  # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
 end

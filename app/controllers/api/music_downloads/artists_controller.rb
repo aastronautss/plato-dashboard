@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+##
+# Find and interact with MusicDownloads Artists
+#
 class Api::MusicDownloads::ArtistsController < ApplicationController
   before_action :set_service
 

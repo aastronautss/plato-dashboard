@@ -2,20 +2,24 @@
 
 require 'rails_helper'
 
-RSpec.describe Api::MusicDownloads::ArtistRegistrationsController do
+RSpec.describe Api::MusicDownloads::AlbumRegistrationsController do
   let(:service) { create :music_download_service }
 
   describe 'GET :index', :vcr do
-    let(:action) { get :index, format: :json, params: { service_id: service.id } }
+    let(:action) do
+      get :index,
+        format: :json,
+        params: { service_id: service.id }
+    end
 
-    it_behaves_like 'an instance variable setter', :service, :artists
+    it_behaves_like 'an instance variable setter', :service, :albums
   end
 
   describe 'POST :create', :vcr do
     let(:action) do
       post :create,
         format: :json,
-        params: { service_id: service.id, registration: { id: 'fc7bbf00-fbaa-4736-986b-b3ac0266ca9b' } }
+        params: { service_id: service.id, registration: { id: '8a103b36-a632-425f-8980-da934b0c1eb3' } }
     end
 
     it_behaves_like 'an instance variable setter', :service
@@ -25,7 +29,7 @@ RSpec.describe Api::MusicDownloads::ArtistRegistrationsController do
     let(:action) do
       delete :destroy,
         format: :json,
-        params: { service_id: service.id, id: 'fc7bbf00-fbaa-4736-986b-b3ac0266ca9b' }
+        params: { service_id: service.id, id: '8a103b36-a632-425f-8980-da934b0c1eb3' }
     end
 
     it_behaves_like 'an instance variable setter', :service

@@ -83,8 +83,24 @@ RSpec.describe Headphones::Adapter, :vcr do
     end
   end
 
+  describe '#get_wanted' do
+    let(:action) { subject.get_wanted }
+
+    it 'returns an enumerable' do
+      expect(action).to respond_to(:each)
+    end
+  end
+
   describe '#add_album' do
     let(:action) { subject.add_album id: '8a103b36-a632-425f-8980-da934b0c1eb3' }
+
+    it 'returns a successful result' do
+      expect(action).to be(true)
+    end
+  end
+
+  describe '#remove_album' do
+    let(:action) { subject.remove_album id: '8a103b36-a632-425f-8980-da934b0c1eb3' }
 
     it 'returns a successful result' do
       expect(action).to be(true)
