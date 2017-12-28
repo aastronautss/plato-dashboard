@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://<HOST>:<PORT>/api?apikey=<API_KEY>&cmd=getAlbum&id=8a103b36-a632-425f-8980-da934b0c1eb3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 28 Dec 2017 04:28:58 GMT
+      Content-Length:
+      - '4270'
+      Content-Type:
+      - text/html;charset=utf-8
+      Server:
+      - CherryPy/3.6.0
+    body:
+      encoding: UTF-8
+      string: '{"album": [{"Status": "Downloaded", "AlbumASIN": "B06XC47DPB", "DateAdded":
+        null, "AlbumTitle": "Relaxer", "UserScore": "7.1", "ArtistName": "alt-J",
+        "ThumbURL": null, "ReleaseCountry": null, "ReleaseDate": "2017-06-02", "AlbumID":
+        "8a103b36-a632-425f-8980-da934b0c1eb3", "ArtistID": "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b",
+        "ArtworkURL": null, "ReleaseFormat": null, "SearchTerm": null, "CriticScore":
+        "65", "ReleaseID": "8a103b36-a632-425f-8980-da934b0c1eb3", "Type": "Album"}],
+        "tracks": [{"AlbumASIN": "B06XC47DPB", "AlbumTitle": "Relaxer", "TrackID":
+        "0718c87a-a35b-4b8e-9a9e-78e7af6f2ea3", "Format": null, "TrackDuration": 207000,
+        "ArtistName": "alt-J", "TrackTitle": "In Cold Blood", "AlbumID": "8a103b36-a632-425f-8980-da934b0c1eb3",
+        "ArtistID": "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b", "Location": null, "TrackNumber":
+        2, "CleanName": "alt j relaxer in cold blood", "BitRate": null, "ReleaseID":
+        "8a103b36-a632-425f-8980-da934b0c1eb3"}, {"AlbumASIN": "B06XC47DPB", "AlbumTitle":
+        "Relaxer", "TrackID": "0d4cc35e-d785-4e2b-9c5e-419e4d56fdf9", "Format": null,
+        "TrackDuration": 321000, "ArtistName": "alt-J", "TrackTitle": "House of the
+        Rising Sun", "AlbumID": "8a103b36-a632-425f-8980-da934b0c1eb3", "ArtistID":
+        "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b", "Location": null, "TrackNumber": 3,
+        "CleanName": "alt j relaxer house of the rising sun", "BitRate": null, "ReleaseID":
+        "8a103b36-a632-425f-8980-da934b0c1eb3"}, {"AlbumASIN": "B06XC47DPB", "AlbumTitle":
+        "Relaxer", "TrackID": "2a5cf3bd-8416-4bb0-858c-d1bb438bf8ac", "Format": null,
+        "TrackDuration": 350000, "ArtistName": "alt-J", "TrackTitle": "Adeline", "AlbumID":
+        "8a103b36-a632-425f-8980-da934b0c1eb3", "ArtistID": "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b",
+        "Location": null, "TrackNumber": 6, "CleanName": "alt j relaxer adeline",
+        "BitRate": null, "ReleaseID": "8a103b36-a632-425f-8980-da934b0c1eb3"}, {"AlbumASIN":
+        "B06XC47DPB", "AlbumTitle": "Relaxer", "TrackID": "4b36572e-11a2-448b-8eb2-c5c9864885a1",
+        "Format": null, "TrackDuration": 300000, "ArtistName": "alt-J", "TrackTitle":
+        "3WW", "AlbumID": "8a103b36-a632-425f-8980-da934b0c1eb3", "ArtistID": "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b",
+        "Location": null, "TrackNumber": 1, "CleanName": "alt j relaxer 3ww", "BitRate":
+        null, "ReleaseID": "8a103b36-a632-425f-8980-da934b0c1eb3"}, {"AlbumASIN":
+        "B06XC47DPB", "AlbumTitle": "Relaxer", "TrackID": "71371c66-a810-46bf-9e9a-af7db7e92bc8",
+        "Format": null, "TrackDuration": 218000, "ArtistName": "alt-J", "TrackTitle":
+        "Hit Me Like That Snare", "AlbumID": "8a103b36-a632-425f-8980-da934b0c1eb3",
+        "ArtistID": "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b", "Location": null, "TrackNumber":
+        4, "CleanName": "alt j relaxer hit me like that snare", "BitRate": null, "ReleaseID":
+        "8a103b36-a632-425f-8980-da934b0c1eb3"}, {"AlbumASIN": "B06XC47DPB", "AlbumTitle":
+        "Relaxer", "TrackID": "8c991ae6-ffd7-4802-8d12-6247facc9658", "Format": null,
+        "TrackDuration": 349000, "ArtistName": "alt-J", "TrackTitle": "Pleader", "AlbumID":
+        "8a103b36-a632-425f-8980-da934b0c1eb3", "ArtistID": "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b",
+        "Location": null, "TrackNumber": 8, "CleanName": "alt j relaxer pleader",
+        "BitRate": null, "ReleaseID": "8a103b36-a632-425f-8980-da934b0c1eb3"}, {"AlbumASIN":
+        "B06XC47DPB", "AlbumTitle": "Relaxer", "TrackID": "c1e442de-f415-4600-9a6c-9bcf50cf1251",
+        "Format": null, "TrackDuration": 232000, "ArtistName": "alt-J", "TrackTitle":
+        "Deadcrush", "AlbumID": "8a103b36-a632-425f-8980-da934b0c1eb3", "ArtistID":
+        "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b", "Location": null, "TrackNumber": 5,
+        "CleanName": "alt j relaxer deadcrush", "BitRate": null, "ReleaseID": "8a103b36-a632-425f-8980-da934b0c1eb3"},
+        {"AlbumASIN": "B06XC47DPB", "AlbumTitle": "Relaxer", "TrackID": "fb31cb75-bb39-49fd-a17f-a4288e01177d",
+        "Format": null, "TrackDuration": 366000, "ArtistName": "alt-J", "TrackTitle":
+        "Last Year", "AlbumID": "8a103b36-a632-425f-8980-da934b0c1eb3", "ArtistID":
+        "fc7bbf00-fbaa-4736-986b-b3ac0266ca9b", "Location": null, "TrackNumber": 7,
+        "CleanName": "alt j relaxer last year", "BitRate": null, "ReleaseID": "8a103b36-a632-425f-8980-da934b0c1eb3"}],
+        "description": [{"LastUpdated": "2017-12-26", "Summary": null, "Content":
+        null, "ReleaseID": null, "ArtistID": null, "ReleaseGroupID": "8a103b36-a632-425f-8980-da934b0c1eb3"}]}'
+    http_version: 
+  recorded_at: Thu, 28 Dec 2017 04:28:58 GMT
+recorded_with: VCR 4.0.0

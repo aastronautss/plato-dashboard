@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://<HOST>:<PORT>/api?apikey=<API_KEY>&cmd=findAlbum&name=masseduction
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 28 Dec 2017 04:14:59 GMT
+      Content-Length:
+      - '3325'
+      Content-Type:
+      - text/html;charset=utf-8
+      Server:
+      - CherryPy/3.6.0
+    body:
+      encoding: UTF-8
+      string: '[{"rgid": "53dd291e-372f-4f76-844b-1b5b42df6832", "albumurl": "http://musicbrainz.org/release/efc696c1-20c0-4b92-8087-02c4ab0b825e",
+        "tracks": "13", "date": "2017-10-13", "id": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "rgtype": "Album", "title": "MASSEDUCTION", "url": "http://musicbrainz.org/artist/5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "country": "MX", "albumid": "efc696c1-20c0-4b92-8087-02c4ab0b825e", "score":
+        100, "uniquename": "St. Vincent", "formats": "Digital Media"}, {"rgid": "53dd291e-372f-4f76-844b-1b5b42df6832",
+        "albumurl": "http://musicbrainz.org/release/9a005049-79ca-46a2-8696-9e73f3ed6055",
+        "tracks": "13", "date": "2017-10-13", "id": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "rgtype": "Album", "title": "MASSEDUCTION", "url": "http://musicbrainz.org/artist/5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "country": "XW", "albumid": "9a005049-79ca-46a2-8696-9e73f3ed6055", "score":
+        100, "uniquename": "St. Vincent", "formats": "CD"}, {"rgid": "53dd291e-372f-4f76-844b-1b5b42df6832",
+        "albumurl": "http://musicbrainz.org/release/4a07b0a1-cc86-4d7f-831b-6a585ae8a094",
+        "tracks": "14", "date": "2017-10-13", "id": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "rgtype": "Album", "title": "MASSEDUCTION", "url": "http://musicbrainz.org/artist/5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "country": "JP", "albumid": "4a07b0a1-cc86-4d7f-831b-6a585ae8a094", "score":
+        100, "uniquename": "St. Vincent", "formats": "CD"}, {"rgid": "53dd291e-372f-4f76-844b-1b5b42df6832",
+        "albumurl": "http://musicbrainz.org/release/8459919a-8268-44ef-932c-16cc3fa0e6d3",
+        "tracks": "14", "date": "2017-10-13", "id": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "rgtype": "Album", "title": "MASSEDUCTION", "url": "http://musicbrainz.org/artist/5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "country": "JP", "albumid": "8459919a-8268-44ef-932c-16cc3fa0e6d3", "score":
+        100, "uniquename": "St. Vincent", "formats": "Digital Media"}, {"rgid": "53dd291e-372f-4f76-844b-1b5b42df6832",
+        "albumurl": "http://musicbrainz.org/release/71a0c389-f064-4745-bb4f-f247e45f4abb",
+        "tracks": "13", "date": "2017-10-13", "id": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "rgtype": "Album", "title": "MASSEDUCTION", "url": "http://musicbrainz.org/artist/5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "country": "US", "albumid": "71a0c389-f064-4745-bb4f-f247e45f4abb", "score":
+        100, "uniquename": "St. Vincent", "formats": "12\" Vinyl"}, {"rgid": "53dd291e-372f-4f76-844b-1b5b42df6832",
+        "albumurl": "http://musicbrainz.org/release/52beb146-35ae-4d62-a550-38d5491b8406",
+        "tracks": "13", "date": "2017-10-13", "id": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "rgtype": "Album", "title": "MASSEDUCTION", "url": "http://musicbrainz.org/artist/5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "country": "XE", "albumid": "52beb146-35ae-4d62-a550-38d5491b8406", "score":
+        100, "uniquename": "St. Vincent", "formats": "12\" Vinyl"}, {"rgid": "53dd291e-372f-4f76-844b-1b5b42df6832",
+        "albumurl": "http://musicbrainz.org/release/520a72b0-5af3-43fa-a127-ee0eb1754356",
+        "tracks": "13", "date": "2017-10-13", "id": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "rgtype": "Album", "title": "MASSEDUCTION (Deluxe Edition)", "url": "http://musicbrainz.org/artist/5334edc0-5faf-4ca5-b1df-000de3e1f752",
+        "country": "US", "albumid": "520a72b0-5af3-43fa-a127-ee0eb1754356", "score":
+        100, "uniquename": "St. Vincent", "formats": "12\" Vinyl"}]'
+    http_version: 
+  recorded_at: Thu, 28 Dec 2017 04:15:00 GMT
+recorded_with: VCR 4.0.0

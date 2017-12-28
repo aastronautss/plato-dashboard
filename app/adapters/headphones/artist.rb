@@ -14,7 +14,7 @@ module Headphones
         artist_hash = props[:artist]&.first || {}
 
         formatted_props = {
-          id: artist_hash['ArtistId'],
+          id: artist_hash['ArtistID'],
           name: artist_hash['ArtistName'],
 
           summary: description_hash['Summary'],

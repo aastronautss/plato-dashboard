@@ -49,9 +49,22 @@ module Headphones
       hashes.map { |props| Headphones::Album.from_api props }
     end
 
+    def get_upcoming(params = {})
+      hashes = deserialize(client.get_upcoming(params)).map(&:with_indifferent_access)
+      hashes.map { |props| Headphones::Album.from_api props }
+    end
+
     def find_album(params = {})
       hashes = deserialize(client.find_album(params)).map(&:with_indifferent_access)
       hashes.map { |props| Headphones::AlbumSearchResult.new props }
+    end
+
+    def get_album(params = {})
+      props = deserialize(client.get_album(params)).with_indifferent_access
+
+      formatted_props = format_get_album_props(props)
+
+      Headphones::Album.from_api formatted_props
     end
 
     def add_album(params = {})
@@ -68,6 +81,21 @@ module Headphones
 
     def deserialize(response)
       response.data
+    end
+
+    # def format_get_artist_params(props)
+    #   props[:artist][0].merge({
+
+    #   })
+    # end
+
+    def format_get_album_props(props)
+      props[:album][0].merge({
+        'Summary' => props[:description][0]['Summary'],
+        'Description' => props[:description][0]['Description'],
+
+        'Tracks' => props[:tracks]
+      })
     end
   end
 end

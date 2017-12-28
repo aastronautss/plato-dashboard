@@ -13,11 +13,15 @@ class Api::MusicDownloads::AlbumsController < ApplicationController
   end
 
   def index
-    # TODO: upcoming
+    @albums = @service.adapter.get_upcoming
+
+    head :no_content # TODO
   end
 
   def show
-    # TODO
+    @album = @service.adapter.get_album id: params[:id]
+
+    head :no_content # TODO
   end
 
   private

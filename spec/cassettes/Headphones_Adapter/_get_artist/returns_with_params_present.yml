@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Dec 2017 04:16:59 GMT
+      - Thu, 28 Dec 2017 04:33:05 GMT
       Content-Length:
       - '4867'
       Content-Type:
@@ -86,5 +86,5 @@ http_interactions:
         "Extras": "", "HaveTracks": 0, "LatestAlbum": "Relaxer", "ArtistSortName":
         "alt-J"}]}'
     http_version: 
-  recorded_at: Thu, 28 Dec 2017 04:16:59 GMT
+  recorded_at: Thu, 28 Dec 2017 04:33:05 GMT
 recorded_with: VCR 4.0.0

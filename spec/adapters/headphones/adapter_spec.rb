@@ -11,7 +11,7 @@ RSpec.describe Headphones::Adapter, :vcr do
 
   describe '#respond_to?' do
     it 'passes stuff through to the Hphones client' do
-      expect(subject.respond_to? :get_index).to be(true)
+      expect(subject.respond_to? :get_similar).to be(true)
     end
   end
 
@@ -57,6 +57,13 @@ RSpec.describe Headphones::Adapter, :vcr do
       expect(result).to respond_to(:name)
       expect(result).to respond_to(:id)
     end
+
+    it 'returns with params present' do
+      result = action
+
+      expect(result.name).to be_present
+      expect(result.id).to be_present
+    end
   end
 
   describe '#find_artist' do
@@ -95,6 +102,55 @@ RSpec.describe Headphones::Adapter, :vcr do
 
       expect(result.first).to respond_to(:title)
       expect(result.first).to respond_to(:id)
+    end
+  end
+
+  describe '#get_upcoming' do
+    let(:action) { subject.get_upcoming }
+
+    it 'returns an enumerable' do
+      expect(action).to respond_to(:each)
+    end
+
+    it 'has Album objects' do
+      result = action
+
+      expect(result.first).to respond_to(:title)
+      expect(result.first).to respond_to(:id)
+    end
+  end
+
+  describe '#find_album' do
+    let(:action) { subject.find_album name: 'masseduction' }
+
+    it 'returns an enumerable' do
+      expect(action).to respond_to(:each)
+    end
+
+    it 'has Album objects in the array' do
+      result = action
+
+      expect(result.first).to respond_to(:title)
+      expect(result.first).to respond_to(:id)
+      expect(result.first).to respond_to(:score)
+    end
+  end
+
+  describe '#get_album' do
+    let(:action) { subject.get_album id: '8a103b36-a632-425f-8980-da934b0c1eb3' }
+
+    it 'returns an Album object' do
+      result = action
+
+      expect(result).to respond_to(:title)
+      expect(result).to respond_to(:id)
+    end
+
+    it 'returns with params present' do
+      result = action
+
+      expect(result.title).to be_present
+      expect(result.id).to be_present
     end
   end
 

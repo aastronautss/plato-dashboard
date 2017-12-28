@@ -16,6 +16,9 @@ module Headphones
           release_date: props['ReleaseDate'],
           type: props['Type'],
 
+          summary: props['Summary'],
+          description: props['Description'],
+
           critic_score: props['CriticScore'],
           user_score: props['UserScore'],
 
