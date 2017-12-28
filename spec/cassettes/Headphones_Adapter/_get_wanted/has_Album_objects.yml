@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://<HOST>:<PORT>/api?apikey=<API_KEY>&cmd=getWanted
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 28 Dec 2017 03:28:45 GMT
+      Content-Length:
+      - '625'
+      Content-Type:
+      - text/html;charset=utf-8
+      Server:
+      - CherryPy/3.6.0
+    body:
+      encoding: UTF-8
+      string: '[{"Status": "Wanted", "AlbumASIN": null, "DateAdded": "2017-12-26",
+        "AlbumTitle": "Ruins", "UserScore": null, "ArtistName": "First Aid Kit", "ThumbURL":
+        "https://lastfm-img2.akamaized.net/i/u/64s/f88921b0a6927519c9f2ef78ccb9e7c8.png",
+        "ReleaseCountry": null, "ReleaseDate": "2018-01-19", "AlbumID": "2db65b00-baa9-454d-b4a5-9f9e6f239cd1",
+        "ArtistID": "373faa02-74d7-4b1d-9b47-7574ad510f8d", "ArtworkURL": "https://lastfm-img2.akamaized.net/i/u/300x300/f88921b0a6927519c9f2ef78ccb9e7c8.png",
+        "ReleaseFormat": null, "SearchTerm": null, "CriticScore": null, "ReleaseID":
+        "2db65b00-baa9-454d-b4a5-9f9e6f239cd1", "Type": "Album"}]'
+    http_version: 
+  recorded_at: Thu, 28 Dec 2017 03:28:45 GMT
+recorded_with: VCR 4.0.0

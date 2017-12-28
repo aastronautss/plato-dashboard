@@ -40,7 +40,7 @@ module Headphones
       end
     end
 
-    attr_reader :id, :asin,
+    attr_reader :id, :asin, :url,
       :title, :release_date, :type,
       :critic_score, :user_score,
       :artwork_thumbnail_url, :artwork_url,
@@ -50,6 +50,7 @@ module Headphones
     def initialize(props = {})
       @id = props[:id]
       @asin = props[:asin]
+      @url = props[:url]
 
       @title = props[:title]
       @release_date = props[:release_date]

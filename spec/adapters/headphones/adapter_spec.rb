@@ -89,6 +89,13 @@ RSpec.describe Headphones::Adapter, :vcr do
     it 'returns an enumerable' do
       expect(action).to respond_to(:each)
     end
+
+    it 'has Album objects' do
+      result = action
+
+      expect(result.first).to respond_to(:title)
+      expect(result.first).to respond_to(:id)
+    end
   end
 
   describe '#add_album' do

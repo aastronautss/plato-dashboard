@@ -45,7 +45,13 @@ module Headphones
     end
 
     def get_wanted(params = {})
-      deserialize client.get_wanted(params)
+      hashes = deserialize(client.get_wanted(params)).map(&:with_indifferent_access)
+      hashes.map { |props| Headphones::Album.from_api props }
+    end
+
+    def find_album(params = {})
+      hashes = deserialize(client.find_album(params)).map(&:with_indifferent_access)
+      hashes.map { |props| Headphones::AlbumSearchResult.new props }
     end
 
     def add_album(params = {})
