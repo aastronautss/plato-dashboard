@@ -21,10 +21,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 
 # Back-end
+gem 'redis', '~> 4.0'
+gem 'sidekiq', '~> 5.0'
+
 gem 'activerecord_json_validator'
 gem 'bcrypt', '~> 3.1.7'
 gem 'hashie'
-gem 'redis', '~> 4.0'
 gem 'turbolinks', '~> 5'
 
 # Use Capistrano for deployment

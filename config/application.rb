@@ -31,5 +31,7 @@ module PlatoDashboard
     config.generators.system_tests = nil
     config.autoload_paths << "#{Rails.root}/app/adapters"
     config.autoload_paths << "#{Rails.root}/app/models/external_services"
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end
