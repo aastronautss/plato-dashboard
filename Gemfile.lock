@@ -7,6 +7,20 @@ GIT
       faraday
       hashie
 
+GIT
+  remote: https://github.com/aastronautss/rdarr-ruby.git
+  revision: 0b857749e9900d93425dd54b55eaa3e5d55d640f
+  branch: master
+  specs:
+    rdarr (0.0.1)
+
+GIT
+  remote: https://github.com/aastronautss/snarr-ruby.git
+  revision: bd255f565531b2e1c9c02c2c4fe8ff7a2cb28987
+  branch: master
+  specs:
+    snarr (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -271,6 +285,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.4)
   rails-controller-testing
+  rdarr!
   redis (~> 4.0)
   rspec-rails
   rubocop
@@ -278,6 +293,7 @@ DEPENDENCIES
   shoulda-matchers
   sidekiq (~> 5.0)
   simplecov
+  snarr!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
