@@ -3,7 +3,7 @@
 ##
 # Find and interact with MusicDownloads Artists
 #
-class Api::MusicDownloads::ArtistsController < ApplicationController
+class Api::MusicDownloads::ArtistsController < Api::ApplicationController
   before_action :set_service
 
   def search

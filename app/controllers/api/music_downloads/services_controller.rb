@@ -3,7 +3,7 @@
 ##
 # Controller for managing music download services.
 #
-class Api::MusicDownloads::ServicesController < ApplicationController
+class Api::MusicDownloads::ServicesController < Api::ApplicationController
   def index
     @services = MusicDownloadService.all
 

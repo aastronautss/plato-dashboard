@@ -3,7 +3,7 @@
 ##
 # Interface for finding and choosing releases.
 #
-class Api::MusicDownloads::AlbumReleasesController < ApplicationController
+class Api::MusicDownloads::AlbumReleasesController < Api::ApplicationController
   before_action :set_service
 
   def index

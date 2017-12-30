@@ -3,7 +3,7 @@
 ##
 # Interface for registering and deregistering artists.
 #
-class Api::MusicDownloads::ArtistRegistrationsController < ApplicationController
+class Api::MusicDownloads::ArtistRegistrationsController < Api::ApplicationController
   before_action :set_service
 
   def index
