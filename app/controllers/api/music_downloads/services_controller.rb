@@ -6,6 +6,8 @@
 class Api::MusicDownloads::ServicesController < ApplicationController
   def index
     @services = MusicDownloadService.all
+
+    render json: @services
   end
 
   def create
