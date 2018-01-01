@@ -13,6 +13,8 @@ class MusicDownloadServices extends React.Component {
       name: 'New',
     };
 
+    this.handleCreate = this.handleCreate.bind(this);
+
     this.state = {
       services: [this.newService],
       currentService: this.newService,
@@ -22,13 +24,13 @@ class MusicDownloadServices extends React.Component {
   }
 
   fetchServices() {
-    axios.get('api/music_downloads/services')
+    axios.get('api/music_downloads/services.json')
       .then(response => {
         const services = response.data;
 
         this.setState({
           services: [this.newService].concat(services),
-          currentService: (services[1] || this.newService),
+          currentService: (services[0] || this.newService),
 
           loading: false,
         });
@@ -37,6 +39,17 @@ class MusicDownloadServices extends React.Component {
         console.error(error);
       });
   }
+
+  // Event Handlers
+
+  handleCreate(createdService) {
+    this.setState((prevState, props) => ({
+      services: prevState.services.concat(createdService),
+      currentService: createdService
+    }));
+  }
+
+  // Lifecycle callbacks
 
   componentDidMount() {
     this.fetchServices();
@@ -48,7 +61,7 @@ class MusicDownloadServices extends React.Component {
     if (this.state.loading) {
       view = <Loading />;
     } else if (this.state.currentService.id === -1) {
-      view = <NewMusicDownloadService />;
+      view = <NewMusicDownloadService onCreate={this.handleCreate}/>;
     } else {
       view = <MusicDownloadService service={this.state.currentService} />;
     }

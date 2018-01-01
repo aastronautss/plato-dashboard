@@ -55,7 +55,7 @@ class NewMusicDownloadService extends React.Component {
 
     axios.post('/api/music_downloads/services', { music_download_service: data })
       .then((response) => {
-        console.log(response);
+        this.props.onCreate(response.data);
       })
       .catch((error) => {
         console.error(error);

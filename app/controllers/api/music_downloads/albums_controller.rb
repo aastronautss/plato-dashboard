@@ -9,13 +9,13 @@ class Api::MusicDownloads::AlbumsController < Api::ApplicationController
   def search
     @results = @service.adapter.find_album name: params[:q]
 
-    head :no_content # TODO
+    render json: @results # TODO
   end
 
   def index
     @albums = @service.adapter.get_upcoming
 
-    head :no_content # TODO
+    render json: @albums # TODO
   end
 
   def show
