@@ -13,7 +13,11 @@ class Api::MusicDownloads::ServicesController < Api::ApplicationController
   def create
     @service = MusicDownloadService.new service_params
 
-    @service.save
+    if @service.save
+      render json: @service
+    else
+      head :unprocessable_entity
+    end
   end
 
   private

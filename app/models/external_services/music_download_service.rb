@@ -5,7 +5,7 @@
 #
 class MusicDownloadService < ExternalService
   APPS = %w[Headphones].freeze
-  DATA_JSON_SCHEMA = Rails.root.join('config', 'schemas', 'music_download_service', 'data.json_schema').to_s.freeze
+  DATA_JSON_SCHEMA = Rails.root.join('app', 'schemas', 'music_download_service', 'data.json').to_s.freeze
 
   enum app: APPS
 

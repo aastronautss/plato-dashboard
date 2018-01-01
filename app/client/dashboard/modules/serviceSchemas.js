@@ -1,0 +1,18 @@
+const musicDownloadServiceSchemas = {
+  "Headphones": {
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "properties": {
+      "protocol": { "type": "string" },
+      "host": { "type": "string" },
+      "port": { "type": ["integer", "string"] },
+      "http_root": { "type": "string" },
+      "api_key": { "type": "string" }
+    },
+    "required": ["host", "port", "api_key"]
+  }
+}
+
+export {
+  musicDownloadServiceSchemas
+};
