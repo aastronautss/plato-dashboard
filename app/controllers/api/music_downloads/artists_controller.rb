@@ -9,7 +9,7 @@ class Api::MusicDownloads::ArtistsController < Api::ApplicationController
   def search
     @results = @service.adapter.find_artist name: params[:q]
 
-    head :no_content # TODO
+    render json: @results
   end
 
   def show

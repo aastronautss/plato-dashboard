@@ -9,7 +9,7 @@ class Api::MusicDownloads::AlbumRegistrationsController < Api::ApplicationContro
   def index
     @albums = @service.adapter.get_wanted
 
-    head :no_content # TODO
+    render json: @albums
   end
 
   def create

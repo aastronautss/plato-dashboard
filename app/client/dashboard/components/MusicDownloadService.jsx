@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import AlbumsIndex from './AlbumsIndex';
+import ArtistSearch from './ArtistSearch';
 
 class MusicDownloadService extends React.Component {
   constructor(props) {
@@ -17,10 +18,14 @@ class MusicDownloadService extends React.Component {
   render() {
     return (
       <div>
-        {
-          this.props.service &&
-          this.state.currentView
-        }
+        <ArtistSearch service={this.props.service} />
+
+        <div>
+          {
+            this.props.service &&
+            this.state.currentView
+          }
+        </div>
       </div>
     );
   }
