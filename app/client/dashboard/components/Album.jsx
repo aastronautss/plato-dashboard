@@ -6,21 +6,18 @@ class Album extends React.Component {
     const album = this.props.data;
 
     return (
-      <div>
-        <div>
-          {album.title} <span>{album.artist.name}</span>
-        </div>
-
-        <div>
-          {album.release_date}
-        </div>
-
-        <AlbumControls
-          album={album}
-          onRemove={this.props.onRemove}
-          onAdd={this.props.onAdd}
-        />
-      </div>
+      <tr>
+        <td>{album.title}</td>
+        <td>{album.artist.name}</td>
+        <td>{album.release_date}</td>
+        <td>
+          <AlbumControls
+            album={album}
+            onRemove={this.props.onRemove}
+            onAdd={this.props.onAdd}
+          />
+        </td>
+      </tr>
     );
   }
 }

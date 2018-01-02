@@ -59,17 +59,20 @@ class AlbumsIndex extends React.Component {
   render() {
     let children;
     if (this.state.albums.length === 0) {
-      children = <Loading />
+      children = (
+        <tr>
+          <td colSpan="4"><Loading /></td>
+        </tr>
+      );
     } else {
       children = this.state.albums.map(album => {
         return (
-          <li key={album.id}>
-            <Album
-              data={album}
-              onRemove={this.handleRemove}
-              onAdd={this.handleAdd}
-            />
-          </li>
+          <Album
+            key={album.id}
+            data={album}
+            onRemove={this.handleRemove}
+            onAdd={this.handleAdd}
+          />
         );
       });
     }
@@ -77,7 +80,21 @@ class AlbumsIndex extends React.Component {
     return (
       <div>
         <h3>Upcoming Albums</h3>
-        <div>{children}</div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Artist</th>
+              <th>Album</th>
+              <th>Release Date</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {children}
+          </tbody>
+        </table>
       </div>
     )
   }
