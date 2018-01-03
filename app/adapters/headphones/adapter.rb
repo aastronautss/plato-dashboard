@@ -63,7 +63,6 @@ module Headphones
 
     def get_album(params = {})
       props = deserialize(client.get_album(params)).with_indifferent_access
-
       formatted_props = format_get_album_props(props)
 
       Headphones::Album.from_api formatted_props

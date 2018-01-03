@@ -4,10 +4,11 @@ import AlbumControls from './AlbumControls';
 class Album extends React.Component {
   render() {
     const album = this.props.data;
+    const href = `#album/${album.id}`;
 
     return (
       <tr>
-        <td>{album.title}</td>
+        <td><a href={href} onClick={this.props.onClick}>{album.title}</a></td>
         <td>{album.artist.name}</td>
         <td>{album.release_date}</td>
         <td>

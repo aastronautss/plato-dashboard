@@ -82,6 +82,7 @@ class ArtistsIndex extends React.Component {
             key={artist.id}
             data={artist}
 
+            onClick={this.props.onClick}
             onRemove={this.handleRemove}
             onAdd={this.handleAdd}
             onPause={this.handlePause}

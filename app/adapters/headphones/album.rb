@@ -53,7 +53,7 @@ module Headphones
       :critic_score, :user_score,
       :artwork_thumbnail_url, :artwork_url,
       :status,
-      :artist
+      :artist, :tracks
 
     def initialize(props = {})
       @id = props[:id]
@@ -74,12 +74,18 @@ module Headphones
 
       artist_props = props[:artist]
       @artist = populate_artist(artist_props) if artist_props
+      tracks_props = props[:tracks]
+      @tracks = populate_tracks(tracks_props) if tracks_props
     end
 
     private
 
     def populate_artist(props)
       Headphones::Artist.new(props)
+    end
+
+    def populate_tracks(props)
+      props.map { |track_props| Headphones::Track.from_api(track_props) }
     end
   end
   # rubocop:enable Metrics/MethodLength, Metrics/AbcSize

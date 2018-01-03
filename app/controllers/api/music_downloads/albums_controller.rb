@@ -21,7 +21,7 @@ class Api::MusicDownloads::AlbumsController < Api::ApplicationController
   def show
     @album = @service.adapter.get_album id: params[:id]
 
-    head :no_content # TODO
+    render json: @album # TODO
   end
 
   private

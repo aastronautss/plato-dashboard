@@ -70,6 +70,8 @@ class AlbumsIndex extends React.Component {
           <Album
             key={album.id}
             data={album}
+
+            onClick={this.props.onClick}
             onRemove={this.handleRemove}
             onAdd={this.handleAdd}
           />
