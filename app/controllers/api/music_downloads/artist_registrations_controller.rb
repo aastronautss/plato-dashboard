@@ -9,7 +9,7 @@ class Api::MusicDownloads::ArtistRegistrationsController < Api::ApplicationContr
   def index
     @artists = @service.adapter.get_index
 
-    head :no_content # TODO
+    render json: @artists
   end
 
   def create
