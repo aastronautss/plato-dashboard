@@ -1,11 +1,20 @@
 import React from 'react';
 import AlbumControls from './AlbumControls';
 
+import msToDurationString from '../modules/msToDurationString';
+
 class AlbumDetail extends React.Component {
   render() {
     const album = this.props.album;
-    const tracks = album.tracks.map((track) => {
-      return <li key={track.id}>{track.title}</li>;
+    const sortedTracks = album.tracks.sort((trackA, trackB) => trackA.number - trackB.number);
+    const tracks = sortedTracks.map((track) => {
+      return (
+        <li key={track.id}>
+          <span>{track.number}</span>
+          <span>{track.title}</span>
+          <span>{msToDurationString(parseInt(track.duration))}</span>
+        </li>
+      );
     });
 
     return (
