@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import ServiceFields from './ServiceFields';
-import { musicDownloadServiceSchemas } from '../modules/serviceSchemas';
+
+import ServiceFields from '../shared/ServiceFields';
+import { musicDownloadServiceSchemas } from '../../modules/serviceSchemas';
 
 class NewMusicDownloadService extends React.Component {
   constructor (props) {

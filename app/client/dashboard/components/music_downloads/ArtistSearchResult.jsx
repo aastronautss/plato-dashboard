@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+
 import ArtistControls from './ArtistControls';
 
 class ArtistSearchResult extends React.Component {

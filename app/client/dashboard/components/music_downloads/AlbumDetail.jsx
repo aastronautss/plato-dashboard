@@ -1,7 +1,8 @@
 import React from 'react';
+
 import AlbumControls from './AlbumControls';
 
-import msToDurationString from '../modules/msToDurationString';
+import msToDurationString from '../../modules/msToDurationString';
 
 class AlbumDetail extends React.Component {
   render() {

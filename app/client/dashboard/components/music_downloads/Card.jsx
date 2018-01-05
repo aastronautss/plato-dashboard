@@ -2,7 +2,7 @@ import React from 'react';
 import AlbumCard from './AlbumCard';
 import ArtistCard from './ArtistCard';
 
-class MusicDownloadServiceCard extends React.Component {
+class Card extends React.Component {
   getComponentForPath() {
     const parts = this.props.path.split('/');
 
@@ -20,9 +20,12 @@ class MusicDownloadServiceCard extends React.Component {
     const component = this.getComponentForPath();
 
     return (
-      <div>{component}</div>
+      <div>
+        <div>x</div>
+        {component}
+      </div>
     );
   }
 }
 
-export default MusicDownloadServiceCard;
+export default Card;

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ArtistSearchResult from './ArtistSearchResult';
 
 class ArtistSearchResults extends React.Component {

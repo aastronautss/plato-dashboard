@@ -1,4 +1,5 @@
 import React from 'react';
+
 import AlbumControls from './AlbumControls';
 
 class Album extends React.Component {

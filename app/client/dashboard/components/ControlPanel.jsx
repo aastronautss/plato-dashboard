@@ -1,11 +1,11 @@
 import React from 'react';
-import MusicDownloadServices from './MusicDownloadServices';
+import MusicDownloadsContainer from '../containers/MusicDownloadsContainer';
 
 class ControlPanel extends React.Component {
   render() {
     return (
       <div>
-        <MusicDownloadServices />
+        <MusicDownloadsContainer />
       </div>
     );
   }

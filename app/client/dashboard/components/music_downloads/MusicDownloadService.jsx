@@ -1,10 +1,11 @@
 import React from 'react';
 import axios from 'axios';
-import BasicNav from './BasicNav';
+
+import BasicNav from '../shared/BasicNav';
 import AlbumsIndex from './AlbumsIndex';
 import ArtistsIndex from './ArtistsIndex';
 import ArtistSearch from './ArtistSearch';
-import MusicDownloadServiceCard from './MusicDownloadServiceCard';
+import Card from './Card';
 
 class MusicDownloadService extends React.Component {
   constructor(props) {
@@ -62,7 +63,7 @@ class MusicDownloadService extends React.Component {
 
         {
           this.state.currentCard &&
-          <MusicDownloadServiceCard path={this.state.currentCard} service={this.props.service} />
+          <Card path={this.state.currentCard} service={this.props.service} />
         }
       </div>
     );

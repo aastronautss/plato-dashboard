@@ -1,5 +1,6 @@
 import React from 'react';
-import Thumbnail from './Thumbnail';
+
+import Thumbnail from '../shared/Thumbnail';
 import ArtistControls from './ArtistControls';
 
 class Artist extends React.Component {

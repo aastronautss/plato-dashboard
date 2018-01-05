@@ -1,5 +1,5 @@
 import React from 'react';
-import humanizeSnakeCaseString from '../modules/humanizeSnakeCaseString';
+import humanizeSnakeCaseString from '../../modules/humanizeSnakeCaseString';
 
 class ServiceFields extends React.Component {
   inputForProperty(name) {

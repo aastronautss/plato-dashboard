@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import Loading from './Loading';
+
+import Loading from '../shared/Loading';
 import NewMusicDownloadService from './NewMusicDownloadService';
 import MusicDownloadService from './MusicDownloadService';
 

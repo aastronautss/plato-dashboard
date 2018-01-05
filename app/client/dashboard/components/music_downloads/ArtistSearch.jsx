@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import SearchField from './SearchField';
+
+import Loading from '../shared/Loading';
+import SearchField from '../shared/SearchField';
 import ArtistSearchResults from './ArtistSearchResults';
-import Loading from './Loading';
 
 class ArtistSearch extends React.Component {
   constructor(props) {
