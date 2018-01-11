@@ -6,7 +6,7 @@ import MusicDownloadServices from '../components/music_downloads/MusicDownloadSe
 class MusicDownloadsContainer extends React.Component {
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(fetchAlbumsIfNeeded());
+    // dispatch(fetchAlbumsIfNeeded());
   }
 
   handleRefreshClick = (e) => {
@@ -19,10 +19,12 @@ class MusicDownloadsContainer extends React.Component {
 
   render() {
     const { albums, isFetching, lastUpdated } = this.props;
-    const isEmpty = albums.length === 0;
+    // const isEmpty = albums.length === 0;
 
     return (
-      <div></div>
+      <div id="music-downloads" className="widget">
+        <MusicDownloadServices />
+      </div>
     );
   }
 }
@@ -45,4 +47,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(MusicDownloadServices);
+export default connect(mapStateToProps)(MusicDownloadsContainer);

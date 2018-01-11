@@ -22,9 +22,17 @@ h2 {
 
 h3 {
   font-family: $header-font-stack;
-  font-size: 1.1em;
+  font-size: 1.3em;
   font-weight: 400;
   color: $header-3-color;
+}
+
+h4 {
+  font-family: $header-font-stack;
+  font-size: 1.1em;
+  font-weight: 400;
+  font-style: italic;
+  color: $header-4-color;
 }
 
 a {

@@ -8,18 +8,20 @@ class Album extends React.Component {
     const href = `#album/${album.id}`;
 
     return (
-      <tr>
-        <td><a href={href} onClick={this.props.onClick}>{album.title}</a></td>
-        <td>{album.artist.name}</td>
-        <td>{album.release_date}</td>
-        <td>
-          <AlbumControls
-            album={album}
-            onRemove={this.props.onRemove}
-            onAdd={this.props.onAdd}
-          />
-        </td>
-      </tr>
+      <div className="list-album">
+        <h4>
+          <a href={href} onClick={this.props.onClick}>
+            {album.title}
+          </a>
+        </h4>
+        <div className="list-album-artist">{album.artist.name}</div>
+        <div className="list-album-release-date">{album.release_date}</div>
+        <AlbumControls
+          album={album}
+          onRemove={this.props.onRemove}
+          onAdd={this.props.onAdd}
+        />
+      </div>
     );
   }
 }

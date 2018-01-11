@@ -5,15 +5,22 @@ class BasicNav extends React.Component {
     const keys = Object.entries(this.props.views).map(pair => pair[0]);
     const links = keys.map((key) => {
       return (
-        <li key={key}>
-          <a href={`#${key}`} onClick={this.props.onClick}>{this.props.views[key].title}</a>
-        </li>
+        <a
+          className="btn btn-default"
+          key={key}
+          href={`#${key}`}
+          onClick={this.props.onClick}
+        >
+          {this.props.views[key].title}
+        </a>
       );
     });
 
     return (
-      <nav>
-        <ul>{links}</ul>
+      <nav className="widget-nav">
+        <div className="btn-group">
+          {links}
+        </div>
       </nav>
     );
   }

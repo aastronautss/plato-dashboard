@@ -1,0 +1,26 @@
+.form-control {
+  height: 29px;
+  padding: 5px 7px;
+  border-radius: 2px;
+
+  box-shadow: none;
+}
+
+.btn {
+  height: 29px;
+  padding: 5px 10px;
+  border-radius: 2px;
+
+  line-height: 1;
+
+  font-family: $button-font-stack;
+  font-weight: normal;
+
+  color: $button-text-color;
+}
+
+.btn-group {
+  .btn {
+    line-height: 1.34857143;
+  }
+}

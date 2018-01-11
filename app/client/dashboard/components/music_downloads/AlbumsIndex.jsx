@@ -61,9 +61,7 @@ class AlbumsIndex extends React.Component {
     let children;
     if (this.state.albums.length === 0) {
       children = (
-        <tr>
-          <td colSpan="4"><Loading /></td>
-        </tr>
+        <Loading />
       );
     } else {
       children = this.state.albums.map(album => {
@@ -84,20 +82,7 @@ class AlbumsIndex extends React.Component {
       <div>
         <h3>Upcoming Albums</h3>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Artist</th>
-              <th>Album</th>
-              <th>Release Date</th>
-              <th></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {children}
-          </tbody>
-        </table>
+        {children}
       </div>
     )
   }

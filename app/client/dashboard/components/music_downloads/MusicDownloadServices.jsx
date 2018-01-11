@@ -67,7 +67,12 @@ class MusicDownloadServices extends React.Component {
       view = <MusicDownloadService service={this.state.currentService} />;
     }
 
-    return <div>{view}</div>;
+    return (
+      <div>
+        <h2>Music Downloads</h2>
+        {view}
+      </div>
+    );
   }
 }
 

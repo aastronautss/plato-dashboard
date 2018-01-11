@@ -2,7 +2,7 @@ import React from 'react';
 import ControlPanel from './ControlPanel';
 
 const App = (props) => (
-  <div>
+  <div id="app">
     <header>
       <h1>Plato Dashboard</h1>
     </header>

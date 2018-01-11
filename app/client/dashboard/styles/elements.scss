@@ -1,0 +1,30 @@
+.widget {
+  width: 550px;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.header-search {
+  form {
+    width: 70%;
+    margin: 5px auto;
+  }
+
+  .input-group {
+    width: 100%;
+  }
+}
+
+.widget-nav {
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  .btn {
+    width: 85px;
+  }
+}
+
+.list-album {
+
+}

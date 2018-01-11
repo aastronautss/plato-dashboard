@@ -105,7 +105,7 @@ class ArtistSearch extends React.Component {
 
 
     return (
-      <div>
+      <div className="header-search">
         <SearchField onSubmit={this.handleSubmit} onChange={this.handleChange} type="artist" />
         {child}
       </div>

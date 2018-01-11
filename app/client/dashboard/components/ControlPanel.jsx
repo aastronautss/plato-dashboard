@@ -18,7 +18,7 @@ const musicDownloadsStore = createStore(
 class ControlPanel extends React.Component {
   render() {
     return (
-      <div>
+      <div id="control-panel">
         <Provider store={musicDownloadsStore}>
           <MusicDownloadsContainer />
         </Provider>
