@@ -20,9 +20,14 @@ class Card extends React.Component {
     const component = this.getComponentForPath();
 
     return (
-      <div>
-        <div>x</div>
-        {component}
+      <div className="card-wrapper">
+        <div className="card">
+          <div className="pull-right">
+            <span className="glyphicon glyphicon-remove text-muted"></span>
+          </div>
+
+          {component}
+        </div>
       </div>
     );
   }

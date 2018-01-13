@@ -7,6 +7,8 @@ body {
 }
 
 h1 {
+  margin: 0;
+
   font-family: $header-font-stack;
   font-size: 2.5em;
   line-height: 1.3em;
@@ -14,6 +16,8 @@ h1 {
 }
 
 h2 {
+  margin: 0;
+
   font-family: $header-font-stack;
   font-size: 1.5em;
   font-weight: 400;
@@ -21,6 +25,8 @@ h2 {
 }
 
 h3 {
+  margin: 0;
+
   font-family: $header-font-stack;
   font-size: 1.3em;
   font-weight: 400;
@@ -28,11 +34,20 @@ h3 {
 }
 
 h4 {
+  margin: 0;
+
   font-family: $header-font-stack;
   font-size: 1.1em;
   font-weight: 400;
   font-style: italic;
   color: $header-4-color;
+}
+
+.subtitle {
+  font-family: $subheader-font-stack;
+  font-size: 1.15em;
+  font-weight: 400;
+  font-style: italic;
 }
 
 a {

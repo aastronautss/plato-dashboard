@@ -100,8 +100,8 @@ module Headphones
       description_props = props[:description][0]
 
       props[:album][0].merge(
-        'Summary' => description_props['Summary'],
-        'Description' => description_props['Description'],
+        'Summary' => description_props && description_props['Summary'],
+        'Description' => description_props && description_props['Description'],
 
         tracks: props[:tracks]
       ).with_indifferent_access

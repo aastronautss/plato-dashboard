@@ -53,18 +53,20 @@ class MusicDownloadService extends React.Component {
 
     return (
       <div>
-        <ArtistSearch service={this.props.service} />
-        <BasicNav views={this.views} onClick={this.handleNavClick} />
-
-        {
-          this.props.service &&
-          currentComponent
-        }
-
         {
           this.state.currentCard &&
           <Card path={this.state.currentCard} service={this.props.service} />
         }
+
+        <ArtistSearch service={this.props.service} />
+        <BasicNav views={this.views} onClick={this.handleNavClick} />
+
+        <div className="widget-body">
+          {
+            this.props.service &&
+            currentComponent
+          }
+        </div>
       </div>
     );
   }

@@ -75,7 +75,7 @@ class ArtistsIndex extends React.Component {
   render() {
     let children;
     if (this.state.artists.length === 0) {
-      children = <li><Loading /></li>;
+      children = <Loading />;
     } else {
       children = this.state.artists.map(artist => {
         return (
@@ -95,10 +95,13 @@ class ArtistsIndex extends React.Component {
 
     return (
       <div>
-        <h3>Artists</h3>
-        <ul>
+        <header>
+          <h3>Artists</h3>
+        </header>
+
+        <article>
           {children}
-        </ul>
+        </article>
       </div>
     )
   }

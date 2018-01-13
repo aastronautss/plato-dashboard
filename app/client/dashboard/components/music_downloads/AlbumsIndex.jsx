@@ -80,9 +80,13 @@ class AlbumsIndex extends React.Component {
 
     return (
       <div>
-        <h3>Upcoming Albums</h3>
+        <header>
+          <h3>Upcoming Albums</h3>
+        </header>
 
-        {children}
+        <article>
+          {children}
+        </article>
       </div>
     )
   }

@@ -7,23 +7,29 @@ class ArtistControls extends React.Component {
     let buttons;
     if(artist.status === 'Active') {
       buttons = (
-        <div>
-          <button onClick={this.props.onPause}>Pause</button>
-          <button onClick={this.props.onRemove}>Remove</button>
+        <div className={this.props.className}>
+          <button className="btn btn-xs" onClick={this.props.onPause}>Pause</button>
+          <button className="btn btn-xs" onClick={this.props.onRemove}>Remove</button>
         </div>
       );
     } else if (artist.status === 'Paused') {
       buttons = (
-        <div>
-          <button onClick={this.props.onUnpause}>Unpause</button>
-          <button onClick={this.props.onRemove}>Remove</button>
+        <div className={this.props.className}>
+          <button className="btn btn-xs" onClick={this.props.onUnpause}>Unpause</button>
+          <button className="btn btn-xs" onClick={this.props.onRemove}>Remove</button>
         </div>
       );
     } else {
-      buttons = <div><button onClick={this.props.onAdd}>Add</button></div>;
+      buttons = (
+        <div className={this.props.className}>
+          <button className="btn btn-xs" onClick={this.props.onAdd}>Add</button>
+        </div>
+      );
     }
 
-    return buttons;
+    return (
+      buttons
+    );
   }
 }
 
