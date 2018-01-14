@@ -3,53 +3,15 @@ import axios from 'axios';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchAlbumsIfNeeded, invalidateAlbums, refreshAlbums } from '../../actions/MusicDownloadsActions';
+import {
+  fetchAlbumsIfNeeded, invalidateAlbums, refreshAlbums,
+  addAlbum, removeAlbum,
+} from '../../actions/MusicDownloadsActions';
 
 import Loading from '../shared/Loading';
 import Album from './Album';
 
 class AlbumsIndex extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.handleRemove = this.handleRemove.bind(this);
-    this.handleAdd = this.handleAdd.bind(this);
-
-    this.state = {
-      albums: []
-    }
-  }
-
-  updatedAlbumStatus(prevState, album, newStatus) {
-    const albums = prevState.albums.slice(0);
-    const idx = albums.findIndex(ele => ele.id === album.id);
-    albums[idx].status = newStatus;
-
-    return { albums: albums };
-  }
-
-  handleRemove(album) {
-    axios.delete(`api/music_downloads/services/${this.props.service.id}/albums/registrations/${album.id}`)
-      .then((response) => {
-        this.setState((prevState, props) => this.updatedAlbumStatus(prevState, album, 'Skipped'));
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }
-
-  handleAdd(album) {
-    const data = { registration: { id: album.id } };
-
-    axios.post(`api/music_downloads/services/${this.props.service.id}/albums/registrations.json`, data)
-      .then((response) => {
-        this.setState((prevState, props) => this.updatedAlbumStatus(prevState, album, 'Wanted'));
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }
-
   componentDidMount() {
     this.props.fetchAlbumsIfNeeded();
   }
@@ -68,8 +30,8 @@ class AlbumsIndex extends React.Component {
             data={album}
 
             onClick={this.props.onClick}
-            onRemove={this.handleRemove}
-            onAdd={this.handleAdd}
+            onRemove={this.props.removeAlbum}
+            onAdd={this.props.addAlbum}
           />
         );
       });
@@ -103,6 +65,9 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
   fetchAlbumsIfNeeded,
   invalidateAlbums,
   refreshAlbums,
+
+  addAlbum,
+  removeAlbum,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlbumsIndex);

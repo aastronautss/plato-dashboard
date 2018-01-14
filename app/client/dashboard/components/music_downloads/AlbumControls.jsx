@@ -6,9 +6,17 @@ class AlbumControls extends React.Component {
     let action;
 
     if (album.status === 'Wanted') {
-      action = <button className="btn btn-xs" onClick={(e) => this.props.onRemove(this.props.album, e)}>Remove</button>
+      action = (
+        <button className="btn btn-xs" onClick={(e) => this.props.onRemove(this.props.album.id, e)}>
+          Remove
+        </button>
+      );
     } else {
-      action = <button className="btn btn-xs" onClick={(e) => this.props.onAdd(this.props.album, e)}>Add</button>
+      action = (
+        <button className="btn btn-xs" onClick={(e) => this.props.onAdd(this.props.album.id, e)}>
+          Add
+        </button>
+      );
     }
 
     return (
