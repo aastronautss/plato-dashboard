@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchServices } from '../../actions/MusicDownloadsActions';
 
 import Loading from '../shared/Loading';
 import NewMusicDownloadService from './NewMusicDownloadService';
@@ -9,37 +12,25 @@ class MusicDownloadServices extends React.Component {
   constructor(props) {
     super(props);
 
-    this.newService = {
-      id: -1,
-      name: 'New',
-    };
-
     this.handleCreate = this.handleCreate.bind(this);
-
-    this.state = {
-      services: [this.newService],
-      currentService: this.newService,
-
-      loading: true,
-    };
   }
 
-  fetchServices() {
-    axios.get('api/music_downloads/services.json')
-      .then(response => {
-        const services = response.data;
+  // fetchServices() {
+  //   axios.get('api/music_downloads/services.json')
+  //     .then(response => {
+  //       const services = response.data;
 
-        this.setState({
-          services: [this.newService].concat(services),
-          currentService: (services[0] || this.newService),
+  //       this.setState({
+  //         services: [this.newService].concat(services),
+  //         currentService: (services[0] || this.newService),
 
-          loading: false,
-        });
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }
+  //         loading: false,
+  //       });
+  //     })
+  //     .catch(error => {
+  //       console.error(error);
+  //     });
+  // }
 
   // Event Handlers
 
@@ -53,18 +44,18 @@ class MusicDownloadServices extends React.Component {
   // Lifecycle callbacks
 
   componentDidMount() {
-    this.fetchServices();
+    this.props.fetchServices();
   }
 
   render() {
     let view;
 
-    if (this.state.loading) {
+    if (this.props.loading || !this.props.currentService || this.props.services.length < 1) {
       view = <Loading />;
-    } else if (this.state.currentService.id === -1) {
+    } else if (this.props.currentService.id === -1) {
       view = <NewMusicDownloadService onCreate={this.handleCreate}/>;
     } else {
-      view = <MusicDownloadService service={this.state.currentService} />;
+      view = <MusicDownloadService service={this.props.currentService} />;
     }
 
     return (
@@ -76,4 +67,14 @@ class MusicDownloadServices extends React.Component {
   }
 }
 
-export default MusicDownloadServices;
+const mapStateToProps = (state) => ({
+  services: state.services.items,
+  loading: state.services.isFetching,
+  currentService: state.services.currentService,
+});
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  fetchServices,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(MusicDownloadServices);

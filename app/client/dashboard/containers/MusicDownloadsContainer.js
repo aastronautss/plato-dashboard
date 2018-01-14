@@ -35,10 +35,7 @@ const mapStateToProps = (state) => {
     isFetching,
     lastUpdated,
     items,
-  } = albums || {
-    isFetching: true,
-    items: [],
-  };
+  } = albums;
 
   return {
     items,

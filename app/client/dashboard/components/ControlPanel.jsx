@@ -1,18 +1,18 @@
 import React from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-// import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 
 import rootReducer from '../reducers/rootReducer';
 import MusicDownloadsContainer from '../containers/MusicDownloadsContainer';
 
-// const middleware = [thunk];
+const middleware = [logger, thunk];
 
 const musicDownloadsStore = createStore(
   rootReducer,
-  // applyMiddleware(...middleware)
-  composeWithDevTools()
+  composeWithDevTools(applyMiddleware(...middleware)),
 );
 
 class ControlPanel extends React.Component {

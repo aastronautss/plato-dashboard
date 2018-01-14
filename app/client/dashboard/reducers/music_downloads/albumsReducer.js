@@ -8,6 +8,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
   const { type } = action;
+
   switch (type) {
     case INVALIDATE_ALBUMS:
       return {
