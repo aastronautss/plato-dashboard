@@ -1,6 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchAlbumsIfNeeded, invalidateAlbums, refreshAlbums } from '../../actions/MusicDownloadsActions';
+
 import Loading from '../shared/Loading';
 import Album from './Album';
 
@@ -14,13 +18,6 @@ class AlbumsIndex extends React.Component {
     this.state = {
       albums: []
     }
-  }
-
-  fetchAlbums() {
-    axios.get(`api/music_downloads/services/${this.props.service.id}/albums.json`)
-      .then((response) => {
-        this.setState({ albums: response.data });
-      });
   }
 
   updatedAlbumStatus(prevState, album, newStatus) {
@@ -54,17 +51,17 @@ class AlbumsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchAlbums();
+    this.props.fetchAlbumsIfNeeded();
   }
 
   render() {
-    let children;
-    if (this.state.albums.length === 0) {
-      children = (
+    let child;
+    if (this.props.loading) {
+      child = (
         <Loading />
       );
     } else {
-      children = this.state.albums.map(album => {
+      child = this.props.albums.map(album => {
         return (
           <Album
             key={album.id}
@@ -80,16 +77,32 @@ class AlbumsIndex extends React.Component {
 
     return (
       <div>
-        <header>
-          <h3>Upcoming Albums</h3>
+        <header className="clearfix">
+          <h3 className="pull-left">Upcoming Albums</h3>
+          <div className="pull-right">
+            <button className="btn btn-sm" onClick={this.props.refreshAlbums} disabled={this.props.loading}>
+              <span className="glyphicon glyphicon-refresh"></span>
+            </button>
+          </div>
         </header>
 
         <article>
-          {children}
+          {child}
         </article>
       </div>
     )
   }
 }
 
-export default AlbumsIndex;
+const mapStateToProps = (state) => ({
+  albums: state.albums.items,
+  loading: state.albums.isFetching,
+});
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  fetchAlbumsIfNeeded,
+  invalidateAlbums,
+  refreshAlbums,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(AlbumsIndex);

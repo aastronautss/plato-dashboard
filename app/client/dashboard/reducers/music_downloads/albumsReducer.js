@@ -2,7 +2,7 @@ import { REQUEST_ALBUMS, RECEIVE_ALBUMS, INVALIDATE_ALBUMS } from '../../actions
 
 const initialState = {
   isFetching: false,
-  didInvalidate: false,
+  didInvalidate: true,
   items: []
 };
 
