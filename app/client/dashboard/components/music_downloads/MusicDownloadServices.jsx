@@ -15,23 +15,6 @@ class MusicDownloadServices extends React.Component {
     this.handleCreate = this.handleCreate.bind(this);
   }
 
-  // fetchServices() {
-  //   axios.get('api/music_downloads/services.json')
-  //     .then(response => {
-  //       const services = response.data;
-
-  //       this.setState({
-  //         services: [this.newService].concat(services),
-  //         currentService: (services[0] || this.newService),
-
-  //         loading: false,
-  //       });
-  //     })
-  //     .catch(error => {
-  //       console.error(error);
-  //     });
-  // }
-
   // Event Handlers
 
   handleCreate(createdService) {

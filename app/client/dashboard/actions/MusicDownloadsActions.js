@@ -63,6 +63,11 @@ export const receiveAlbums = (json) => ({
   receivedAt: Date.now(),
 });
 
+export const refreshAlbums = () => (dispatch) => {
+  dispatch(invalidateAlbums());
+  return dispatch(fetchAlbumsIfNeeded());
+}
+
 const fetchAlbums = () => (dispatch, state) => {
   dispatch(requestAlbums());
   return axios.get(`api/music_downloads/services/${this.props.service.id}/albums.json`)
