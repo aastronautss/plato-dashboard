@@ -1,10 +1,10 @@
 import React from 'react';
-import axios from 'axios';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
   fetchArtistsIfNeeded, invalidateArtists, refreshArtists,
+  addArtist, removeArtist,
 } from '../../actions/MusicDownloadsActions';
 
 import ScrollBar from 'react-perfect-scrollbar';
@@ -16,46 +16,30 @@ class ArtistsIndex extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleAdd = this.handleAdd.bind(this);
-    this.handleRemove = this.handleRemove.bind(this);
     this.handlePause = this.handlePause.bind(this);
     this.handleUnpause = this.handleUnpause.bind(this);
   }
 
+  generateContent() {
+    if (this.props.artists.length === 0) {
+      return <Loading />;
+    } else {
+      return this.props.artists.map(artist => (
+        <Artist
+          key={artist.id}
+          data={artist}
+
+          onClick={this.props.onClick}
+          onRemove={this.props.removeArtist}
+          onAdd={this.props.addArtist}
+          onPause={this.handlePause}
+          onUnpause={this.handleUnpause}
+        />
+      ));
+    }
+  }
+
   // AJAX Callbacks
-
-  handleError(error) {
-    console.error(error);
-  }
-
-  updateArtistStatus(artist, newStatus) {
-    this.setState((prevState, props) => {
-      const clonedArtists = prevState.artists.slice(0);
-      const idx = clonedArtists.findIndex((ele) => ele.id === artist.id);
-      clonedArtists[idx].status = newStatus;
-
-      return { artists: clonedArtists };
-    });
-  }
-
-  // Event listeners
-
-  handleAdd(artist) {
-    const service_id = this.props.service.id;
-    const data = { registration: { id: artist.id } };
-
-    axios.post(`/api/music_downloads/services/${service_id}/artists/registrations.json`, data)
-      .then(() => this.updateArtistStatus.bind(this)(artist, 'Active'))
-      .catch(this.handleError.bind(this));
-  }
-
-  handleRemove(artist) {
-    const service_id = this.props.service.id;
-
-    axios.delete(`/api/music_downloads/services/${service_id}/artists/registrations/${artist.id}.json`)
-      .then(() => this.updateArtistStatus.bind(this)(artist, 'Inactive'))
-      .catch(this.handleError.bind(this));
-  }
 
   handlePause(artist) {
     console.log('Not implemented yet!'); // TODO
@@ -72,25 +56,7 @@ class ArtistsIndex extends React.Component {
   }
 
   render() {
-    let children;
-    if (this.props.artists.length === 0) {
-      children = <Loading />;
-    } else {
-      children = this.props.artists.map(artist => {
-        return (
-          <Artist
-            key={artist.id}
-            data={artist}
-
-            onClick={this.props.onClick}
-            onRemove={this.handleRemove}
-            onAdd={this.handleAdd}
-            onPause={this.handlePause}
-            onUnpause={this.handleUnpause}
-          />
-        );
-      });
-    }
+    const content = this.generateContent();
 
     return (
       <div>
@@ -105,7 +71,7 @@ class ArtistsIndex extends React.Component {
 
         <article>
           <ScrollBar>
-            {children}
+            {content}
           </ScrollBar>
         </article>
       </div>
@@ -122,6 +88,9 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
   fetchArtistsIfNeeded,
   invalidateArtists,
   refreshArtists,
+
+  addArtist,
+  removeArtist,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArtistsIndex);

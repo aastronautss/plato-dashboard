@@ -131,7 +131,7 @@ const receiveRemoveArtist = (id, serviceId) => ({
 });
 
 const completeRemoveArtist = (id, serviceId) => (dispatch) => {
-  const props = { status: 'Skipped' };
+  const props = { status: 'Inactive' };
 
   dispatch(updateArtist(id, props, serviceId));
   return dispatch(receiveRemoveArtist(id, serviceId));
