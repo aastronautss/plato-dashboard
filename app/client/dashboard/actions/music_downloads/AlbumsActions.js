@@ -10,10 +10,10 @@ export const requestAlbums = () => ({
   type: REQUEST_ALBUMS,
 });
 
-export const receiveAlbums = (json, serviceId) => ({
+export const receiveAlbums = (items, serviceId) => ({
   type: RECEIVE_ALBUMS,
+  items,
   serviceId,
-  items: json,
   receivedAt: Date.now(),
 });
 

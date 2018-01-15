@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import albums from './music_downloads/albumsReducer';
 import services from './music_downloads/servicesReducer';
+import albums from './music_downloads/albumsReducer';
+import artists from './music_downloads/artistsReducer';
 
 const rootReducer = combineReducers({
-  albums,
   services,
+  albums,
+  artists,
 });
 
 export default rootReducer;

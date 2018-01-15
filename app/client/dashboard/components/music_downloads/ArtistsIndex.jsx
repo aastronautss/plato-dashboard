@@ -1,6 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import {
+  fetchArtistsIfNeeded, invalidateArtists, refreshArtists,
+} from '../../actions/MusicDownloadsActions';
+
 import ScrollBar from 'react-perfect-scrollbar';
 
 import Loading from '../shared/Loading';
@@ -14,15 +20,6 @@ class ArtistsIndex extends React.Component {
     this.handleRemove = this.handleRemove.bind(this);
     this.handlePause = this.handlePause.bind(this);
     this.handleUnpause = this.handleUnpause.bind(this);
-
-    this.state = { artists: [] };
-  }
-
-  fetchArtists() {
-    axios.get(`api/music_downloads/services/${this.props.service.id}/artists/registrations.json`)
-      .then((response) => {
-        this.setState({ artists: response.data });
-      });
   }
 
   // AJAX Callbacks
@@ -71,15 +68,15 @@ class ArtistsIndex extends React.Component {
   // Lifecycle hooks
 
   componentDidMount() {
-    this.fetchArtists();
+    this.props.fetchArtistsIfNeeded();
   }
 
   render() {
     let children;
-    if (this.state.artists.length === 0) {
+    if (this.props.artists.length === 0) {
       children = <Loading />;
     } else {
-      children = this.state.artists.map(artist => {
+      children = this.props.artists.map(artist => {
         return (
           <Artist
             key={artist.id}
@@ -111,4 +108,15 @@ class ArtistsIndex extends React.Component {
   }
 }
 
-export default ArtistsIndex;
+const mapStateToProps = (state) => ({
+  artists: state.artists.items,
+  loading: state.artists.isFetching,
+});
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  fetchArtistsIfNeeded,
+  invalidateArtists,
+  refreshArtists,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArtistsIndex);

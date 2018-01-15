@@ -18,7 +18,7 @@ const updatedAlbums = (state, id, props) => {
 const initialState = {
   isFetching: false,
   didInvalidate: true,
-  items: []
+  items: [],
 };
 
 export default function(state = initialState, action) {
