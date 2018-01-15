@@ -24,7 +24,7 @@ export const invalidateArtists = () => ({
 export const refreshArtists = () => (dispatch) => {
   dispatch(invalidateArtists());
   return dispatch(fetchArtistsIfNeeded());
-}
+};
 
 const fetchArtists = () => (dispatch, getState) => {
   const state = getState();
@@ -34,7 +34,7 @@ const fetchArtists = () => (dispatch, getState) => {
   return axios.get(`api/music_downloads/services/${serviceId}/artists/registrations.json`)
     .then((response) => response.data)
     .then((data) => dispatch(receiveArtists(data, serviceId)));
-}
+};
 
 const shouldFetchArtists = (state) => {
   const artists = state.artists;
@@ -57,13 +57,36 @@ export const fetchArtistsIfNeeded = () => (dispatch, getState) => {
 
 // Artist model
 
+export const REQUEST_SEARCH_ARTIST = 'REQUEST_SEARCH_ARTIST';
+export const RECEIVE_SEARCH_ARTIST = 'RECEIVE_SEARCH_ARTIST';
+
 export const UPDATE_ARTIST = 'UPDATE_ARTIST';
+
 export const REQUEST_ADD_ARTIST = 'REQUEST_ADD_ARTIST';
 export const RECEIVE_ADD_ARTIST = 'RECEIVE_ADD_ARTIST';
 export const REQUEST_REMOVE_ARTIST = 'REQUEST_REMOVE_ARTIST';
 export const RECEIVE_REMOVE_ARTIST = 'RECEIVE_REMOVE_ARTIST';
 
 const shouldPerformActionOnArtist = (id, state) => true;
+
+export const requestSearchArtist = () => ({
+  type: REQUEST_SEARCH_ARTIST,
+});
+
+export const receiveSearchArtist = (results) => ({
+  type: RECEIVE_SEARCH_ARTIST,
+  results,
+});
+
+export const searchArtist = (searchData) => (dispatch, getState) => {
+  const state = getState();
+  const serviceId = state.services.currentService.id;
+
+  dispatch(requestSearchArtist());
+  return axios.get(`/api/music_downloads/services/${serviceId}/artists/search.json`, searchData)
+    .then((response) => response.data)
+    .then((results) => dispatch(receiveSearchArtist(results)));
+};
 
 const updateArtist = (id, props, serviceId) => ({
   type: UPDATE_ARTIST,

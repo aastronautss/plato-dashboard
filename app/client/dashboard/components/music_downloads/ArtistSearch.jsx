@@ -1,6 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { searchArtist } from '../../actions/MusicDownloadsActions';
+
 import Loading from '../shared/Loading';
 import SearchField from '../shared/SearchField';
 import ArtistSearchResults from './ArtistSearchResults';
@@ -16,43 +20,31 @@ class ArtistSearch extends React.Component {
     this.handleRemove = this.handleRemove.bind(this);
     this.handlePause = this.handlePause.bind(this);
     this.handleUnpause = this.handleUnpause.bind(this);
-
-    this.state = {
-      searching: false,
-      searchResults: [],
-    };
   }
 
-  // AJAX callbacks
-
-  handleError(error) {
-    console.error(error);
-  }
-
-  handleSuccess(response) {
-    this.setState({ searchResults: [] });
+  generateContent() {
+    if (this.props.searching) {
+      return <Loading />;
+    } else if (this.props.searchResults.length > 0) {
+      return (
+        <ArtistSearchResults
+          results={this.props.searchResults}
+          onAdd={this.handleAdd}
+          onRemove={this.handleRemove}
+          onPause={this.handlePause}
+          onUnpause={this.handleUnpause}
+        />
+      );
+    }
   }
 
   // Event handlers
 
   handleSubmit(e) {
     e.preventDefault();
-    const data = { params: this.state.search };
-    const service_id = this.props.service.id;
+    const searchData = { params: this.state.search };
 
-    this.setState({ searching: true })
-
-    axios.get(`/api/music_downloads/services/${service_id}/artists/search.json`, data)
-      .then((response) => {
-        this.setState({
-          searching: false,
-          searchResults: response.data,
-        });
-      })
-      .catch((error) => {
-        this.setState({ searching: false });
-        console.log(error);
-      });
+    this.props.searchArtist(searchData);
   }
 
   handleChange(e) {
@@ -88,29 +80,24 @@ class ArtistSearch extends React.Component {
   }
 
   render() {
-    let child;
-    if (this.state.searching) {
-      child = <Loading />;
-    } else if (this.state.searchResults.length > 0) {
-      child = (
-        <ArtistSearchResults
-          results={this.state.searchResults}
-          onAdd={this.handleAdd}
-          onRemove={this.handleRemove}
-          onPause={this.handlePause}
-          onUnpause={this.handleUnpause}
-        />
-      );
-    }
-
+    const content = this.generateContent();
 
     return (
       <div className="header-search">
         <SearchField onSubmit={this.handleSubmit} onChange={this.handleChange} type="artist" />
-        {child}
+        {content}
       </div>
     );
   }
 }
 
-export default ArtistSearch;
+const mapStateToProps = (state) => ({
+  isSearching: state.artists.isSearching,
+  searchResults: state.artists.searchResults,
+});
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  searchArtist,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArtistSearch);

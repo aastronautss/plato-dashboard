@@ -1,5 +1,6 @@
 import {
   REQUEST_ARTISTS, RECEIVE_ARTISTS, INVALIDATE_ARTISTS,
+  REQUEST_SEARCH_ARTIST, RECEIVE_SEARCH_ARTIST,
   UPDATE_ARTIST,
   REQUEST_ADD_ARTIST, RECEIVE_ADD_ARTIST,
   REQUEST_REMOVE_ARTIST, RECEIVE_REMOVE_ARTIST,
@@ -21,6 +22,9 @@ const initialState = {
   isFetching: false,
   didInvalidate: true,
   items: [],
+
+  isSearching: false,
+  searchResults: [],
 };
 
 export default function(state = initialState, action) {
@@ -45,6 +49,17 @@ export default function(state = initialState, action) {
         didInvalidate: false,
         items: action.items,
         lastUpdated: action.receivedAt,
+      };
+    case REQUEST_SEARCH_ARTIST:
+      return {
+        ...state,
+        isSearching: true,
+      };
+    case RECEIVE_SEARCH_ARTIST:
+      return {
+        ...state,
+        isSearching: false,
+        searchResults: action.results,
       };
     case UPDATE_ARTIST:
       items = updatedArtists(state, action.id, action.props);
