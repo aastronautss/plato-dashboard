@@ -94,8 +94,13 @@ class ArtistsIndex extends React.Component {
 
     return (
       <div>
-        <header>
-          <h3>Artists</h3>
+        <header className="clearfix">
+          <h3 className="pull-left">Artists</h3>
+          <div className="pull-right">
+            <button className="btn btn-sm" onClick={this.props.refreshArtists} disabled={this.props.loading}>
+              <span className="glyphicon glyphicon-refresh"></span>
+            </button>
+          </div>
         </header>
 
         <article>

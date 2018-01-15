@@ -10,7 +10,9 @@ const updatedAlbums = (state, id, props) => {
   const clonedItems = items.slice(0);
   const album = clonedItems.find((item) => item.id === id);
 
-  Object.keys(props).forEach((key) => album[key] = props[key]);
+  if (album) {
+    Object.keys(props).forEach((key) => album[key] = props[key]);
+  }
 
   return clonedItems;
 }
