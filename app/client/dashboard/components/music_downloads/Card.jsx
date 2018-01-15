@@ -1,4 +1,7 @@
 import React from 'react';
+
+import ScrollBar from 'react-perfect-scrollbar';
+
 import AlbumCard from './AlbumCard';
 import ArtistCard from './ArtistCard';
 
@@ -22,11 +25,15 @@ class Card extends React.Component {
     return (
       <div className="card-wrapper">
         <div className="card">
-          <div className="pull-right">
-            <span className="glyphicon glyphicon-remove text-muted"></span>
-          </div>
+          <ScrollBar>
+            <div className="card-content clearfix">
+              <div className="pull-right">
+                <span className="glyphicon glyphicon-remove text-muted"></span>
+              </div>
 
-          {component}
+              {component}
+            </div>
+          </ScrollBar>
         </div>
       </div>
     );

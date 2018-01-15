@@ -8,6 +8,8 @@ import {
   addAlbum, removeAlbum,
 } from '../../actions/MusicDownloadsActions';
 
+import ScrollBar from 'react-perfect-scrollbar';
+
 import Loading from '../shared/Loading';
 import Album from './Album';
 
@@ -49,7 +51,9 @@ class AlbumsIndex extends React.Component {
         </header>
 
         <article>
-          {child}
+          <ScrollBar>
+            {child}
+          </ScrollBar>
         </article>
       </div>
     )

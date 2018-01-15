@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import ScrollBar from 'react-perfect-scrollbar';
+
 import Loading from '../shared/Loading';
 import Artist from './Artist';
 
@@ -100,7 +102,9 @@ class ArtistsIndex extends React.Component {
         </header>
 
         <article>
-          {children}
+          <ScrollBar>
+            {children}
+          </ScrollBar>
         </article>
       </div>
     )

@@ -17,7 +17,7 @@ class MusicDownloadService extends React.Component {
     this.views = {
       albums: {
         title: 'Albums',
-        component: <AlbumsIndex service={this.props.service} onClick={this.handleCardClick} />,
+        component: <AlbumsIndex onClick={this.handleCardClick} />,
       },
       artists: {
         title: 'Artists',
