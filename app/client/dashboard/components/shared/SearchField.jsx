@@ -9,6 +9,9 @@ class SearchField extends React.Component {
           className="form-inline"
           onSubmit={this.props.onSubmit}
           onChange={this.props.onChange}
+
+          onFocus={this.props.onFocus}
+          onBlur={this.props.onBlur}
         >
           <div className="input-group">
             <input className="form-control" type="text" name="q" placeholder={placeholderText} />

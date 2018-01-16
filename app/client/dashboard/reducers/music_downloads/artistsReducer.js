@@ -3,7 +3,7 @@ import {
   REQUEST_SEARCH_ARTIST, RECEIVE_SEARCH_ARTIST,
   UPDATE_ARTIST,
   REQUEST_ADD_ARTIST, RECEIVE_ADD_ARTIST,
-  REQUEST_REMOVE_ARTIST, RECEIVE_REMOVE_ARTIST,
+  REQUEST_REMOVE_ARTIST, RECEIVE_REMOVE_ARTIST, CLEAR_SEARCH_ARTIST,
 } from '../../actions/MusicDownloadsActions';
 
 const updatedArtists = (state, id, props) => {
@@ -61,6 +61,11 @@ export default function(state = initialState, action) {
         isSearching: false,
         searchResults: action.results,
       };
+    case CLEAR_SEARCH_ARTIST:
+      return {
+        ...state,
+        searchResults: [],
+      }
     case UPDATE_ARTIST:
       items = updatedArtists(state, action.id, action.props);
 

@@ -59,6 +59,7 @@ export const fetchArtistsIfNeeded = () => (dispatch, getState) => {
 
 export const REQUEST_SEARCH_ARTIST = 'REQUEST_SEARCH_ARTIST';
 export const RECEIVE_SEARCH_ARTIST = 'RECEIVE_SEARCH_ARTIST';
+export const CLEAR_SEARCH_ARTIST = 'CLEAR_SEARCH_ARTIST';
 
 export const UPDATE_ARTIST = 'UPDATE_ARTIST';
 
@@ -76,6 +77,10 @@ export const requestSearchArtist = () => ({
 export const receiveSearchArtist = (results) => ({
   type: RECEIVE_SEARCH_ARTIST,
   results,
+});
+
+export const clearSearchArtist = () => ({
+  type: CLEAR_SEARCH_ARTIST,
 });
 
 export const searchArtist = (searchData) => (dispatch, getState) => {

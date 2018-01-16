@@ -3,7 +3,9 @@ import axios from 'axios';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { searchArtist } from '../../actions/MusicDownloadsActions';
+import { searchArtist, clearSearchArtist } from '../../actions/MusicDownloadsActions';
+
+import ScrollBar from 'react-perfect-scrollbar';
 
 import Loading from '../shared/Loading';
 import SearchField from '../shared/SearchField';
@@ -20,6 +22,16 @@ class ArtistSearch extends React.Component {
     this.handleRemove = this.handleRemove.bind(this);
     this.handlePause = this.handlePause.bind(this);
     this.handleUnpause = this.handleUnpause.bind(this);
+
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
+
+    this.setWrapperRef = this.setWrapperRef.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+
+    this.state = {
+      active: false,
+    };
   }
 
   generateContent() {
@@ -36,9 +48,22 @@ class ArtistSearch extends React.Component {
         />
       );
     }
+
+    return null;
+  }
+
+  setWrapperRef(node) {
+    this.wrapperRef = node;
   }
 
   // Event handlers
+
+  handleClickOutside(e) {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      this.props.clearSearchArtist();
+      this.setState({ active: false });
+    }
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -52,6 +77,14 @@ class ArtistSearch extends React.Component {
     const value = e.target.value;
 
     this.setState({ search: { [name]: value } });
+  }
+
+  handleFocus(e) {
+    this.setState({ active: true });
+  }
+
+  handleBlur(e) {
+    this.setState({ active: this.props.searchResults.length > 0 });
   }
 
   handleAdd(artist) {
@@ -79,13 +112,44 @@ class ArtistSearch extends React.Component {
     console.log('Not implemented yet!'); // TODO
   }
 
+  // Lifecycle callbacks
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
   render() {
     const content = this.generateContent();
 
     return (
       <div className="header-search">
-        <SearchField onSubmit={this.handleSubmit} onChange={this.handleChange} type="artist" />
-        {content}
+        <div className="header-search-wrapper" ref={this.setWrapperRef}>
+          <div className={`header-search-content${this.state.active ? ' active' : ''}`}>
+            <SearchField
+              onSubmit={this.handleSubmit}
+              onChange={this.handleChange}
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
+
+              type="artist"
+            />
+
+            <div className="header-search-results-wrapper">
+              <div className={`header-search-results${!content ? ' hidden' : ''}`}>
+                {
+                  content &&
+                  <ScrollBar>
+                    {content}
+                  </ScrollBar>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -98,6 +162,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
   searchArtist,
+  clearSearchArtist,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArtistSearch);

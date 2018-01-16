@@ -3,8 +3,8 @@ import React from 'react';
 import ArtistSearchResult from './ArtistSearchResult';
 
 class ArtistSearchResults extends React.Component {
-  render() {
-    const items = this.props.results.map((result) => {
+  generateContent() {
+    return this.props.results.map((result) => {
       return (
         <ArtistSearchResult
           key={result.artist.id}
@@ -17,6 +17,10 @@ class ArtistSearchResults extends React.Component {
         />
       );
     });
+  }
+
+  render() {
+    const items = this.generateContent();
 
     return (
       <table>

@@ -1,0 +1,27 @@
+.list-item {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+
+  & + .list-item {
+    margin-top: 5px;
+  }
+
+  .list-item-body {
+    width: 70%;
+  }
+
+  .list-item-thumbnail {
+    margin-right: 5px;
+  }
+
+  .list-item-controls {
+    .btn {
+      min-width: 58px;
+
+      & + .btn {
+        margin-left: 5px;
+      }
+    }
+  }
+}
