@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import BasicNav from '../shared/BasicNav';
+import ClickOutsider from '../shared/ClickOutsider';
 import AlbumsIndex from './AlbumsIndex';
 import ArtistsIndex from './ArtistsIndex';
 import ArtistSearch from './ArtistSearch';
@@ -13,6 +14,7 @@ class MusicDownloadService extends React.Component {
 
     this.handleNavClick = this.handleNavClick.bind(this);
     this.handleCardClick = this.handleCardClick.bind(this);
+    this.handleCardClickOutside = this.handleCardClickOutside.bind(this);
 
     this.views = {
       albums: {
@@ -48,6 +50,10 @@ class MusicDownloadService extends React.Component {
     this.setStateFromLink(e.target, 'currentCard');
   }
 
+  handleCardClickOutside(e) {
+    this.setState({ currentCard: null });
+  }
+
   render() {
     const currentComponent = this.views[this.state.currentView].component;
 
@@ -55,7 +61,10 @@ class MusicDownloadService extends React.Component {
       <div>
         {
           this.state.currentCard &&
-          <Card path={this.state.currentCard} service={this.props.service} />
+
+          <ClickOutsider onClickOutside={this.handleCardClickOutside}>
+            <Card path={this.state.currentCard} service={this.props.service} />
+          </ClickOutsider>
         }
 
         <ArtistSearch service={this.props.service} />
