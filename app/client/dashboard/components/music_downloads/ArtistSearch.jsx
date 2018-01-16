@@ -9,6 +9,7 @@ import ScrollBar from 'react-perfect-scrollbar';
 
 import Loading from '../shared/Loading';
 import SearchField from '../shared/SearchField';
+import ClickOutsider from '../shared/ClickOutsider';
 import ArtistSearchResults from './ArtistSearchResults';
 
 class ArtistSearch extends React.Component {
@@ -26,7 +27,6 @@ class ArtistSearch extends React.Component {
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
 
-    this.setWrapperRef = this.setWrapperRef.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
 
     this.state = {
@@ -52,17 +52,11 @@ class ArtistSearch extends React.Component {
     return null;
   }
 
-  setWrapperRef(node) {
-    this.wrapperRef = node;
-  }
-
   // Event handlers
 
   handleClickOutside(e) {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      this.props.clearSearchArtist();
-      this.setState({ active: false });
-    }
+    this.props.clearSearchArtist();
+    this.setState({ active: false });
   }
 
   handleSubmit(e) {
@@ -112,44 +106,36 @@ class ArtistSearch extends React.Component {
     console.log('Not implemented yet!'); // TODO
   }
 
-  // Lifecycle callbacks
-
-  componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside);
-  }
-
   render() {
     const content = this.generateContent();
 
     return (
       <div className="header-search">
-        <div className="header-search-wrapper" ref={this.setWrapperRef}>
-          <div className={`header-search-content${this.state.active ? ' active' : ''}`}>
-            <SearchField
-              onSubmit={this.handleSubmit}
-              onChange={this.handleChange}
-              onFocus={this.handleFocus}
-              onBlur={this.handleBlur}
+        <ClickOutsider onClickOutside={this.handleClickOutside}>
+          <div className="header-search-wrapper">
+            <div className={`header-search-content${this.state.active ? ' active' : ''}`}>
+              <SearchField
+                onSubmit={this.handleSubmit}
+                onChange={this.handleChange}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
 
-              type="artist"
-            />
+                type="artist"
+              />
 
-            <div className="header-search-results-wrapper">
-              <div className={`header-search-results${!content ? ' hidden' : ''}`}>
-                {
-                  content &&
-                  <ScrollBar>
-                    {content}
-                  </ScrollBar>
-                }
+              <div className="header-search-results-wrapper">
+                <div className={`header-search-results${!content ? ' hidden' : ''}`}>
+                  {
+                    content &&
+                    <ScrollBar>
+                      {content}
+                    </ScrollBar>
+                  }
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </ClickOutsider>
       </div>
     );
   }
