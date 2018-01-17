@@ -4,11 +4,17 @@
 # Parent class for external service data.
 #
 class ExternalService < ApplicationRecord
+  include IndifferentDataColumn
+
   validates :type, presence: true
   validates :app, presence: true
 
-  def data
-    read_attribute(:data)&.with_indifferent_access
+  class << self
+    def apps
+      self.const_get 'APPS'
+    end
+
+    alias available_services apps
   end
 
   def adapter

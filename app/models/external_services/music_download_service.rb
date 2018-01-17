@@ -11,14 +11,6 @@ class MusicDownloadService < ExternalService
 
   validates :data, json: { schema: DATA_JSON_SCHEMA }
 
-  class << self
-    def apps
-      APPS
-    end
-
-    alias available_services apps
-  end
-
   def host
     data[:host]
   end

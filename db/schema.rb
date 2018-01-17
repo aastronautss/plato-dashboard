@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171220043503) do
+ActiveRecord::Schema.define(version: 20180116051647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20171220043503) do
     t.datetime "updated_at", null: false
     t.index ["app"], name: "index_external_services_on_app"
     t.index ["type"], name: "index_external_services_on_type"
+  end
+
+  create_table "scrobbles", force: :cascade do |t|
+    t.string "type", null: false
+    t.integer "app"
+    t.jsonb "data"
+    t.datetime "scrobbled_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["scrobbled_at"], name: "index_scrobbles_on_scrobbled_at"
+    t.index ["type"], name: "index_scrobbles_on_type"
   end
 
 end
