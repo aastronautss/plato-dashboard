@@ -14,7 +14,7 @@ class MusicDownloadService extends React.Component {
 
     this.handleNavClick = this.handleNavClick.bind(this);
     this.handleCardClick = this.handleCardClick.bind(this);
-    this.handleCardClickOutside = this.handleCardClickOutside.bind(this);
+    this.handleCardClose = this.handleCardClose.bind(this);
 
     this.views = {
       albums: {
@@ -50,7 +50,8 @@ class MusicDownloadService extends React.Component {
     this.setStateFromLink(e.target, 'currentCard');
   }
 
-  handleCardClickOutside(e) {
+  handleCardClose(e) {
+    e.preventDefault();
     this.setState({ currentCard: null });
   }
 
@@ -62,8 +63,13 @@ class MusicDownloadService extends React.Component {
         {
           this.state.currentCard &&
 
-          <ClickOutsider onClickOutside={this.handleCardClickOutside}>
-            <Card path={this.state.currentCard} service={this.props.service} />
+          <ClickOutsider onClickOutside={this.handleCardClose}>
+            <Card
+              path={this.state.currentCard}
+              service={this.props.service}
+
+              onClose={this.handleCardClose}
+            />
           </ClickOutsider>
         }
 

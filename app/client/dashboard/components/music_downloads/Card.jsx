@@ -28,7 +28,9 @@ class Card extends React.Component {
           <ScrollBar>
             <div className="card-content clearfix">
               <div className="pull-right">
-                <span className="glyphicon glyphicon-remove text-muted"></span>
+                <a href="#" onClick={this.props.onClose}>
+                  <span className="glyphicon glyphicon-remove text-muted"></span>
+                </a>
               </div>
 
               {component}
