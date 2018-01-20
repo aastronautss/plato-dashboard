@@ -1,0 +1,6 @@
+- if @external_service_activation_url
+  - content_for :additional_meta_tags do
+    %meta{ name: 'external-service-url', content: @external_service_activation_url }
+
+%h2 Music Scrobbles
+%p= link_to 'Add service', external_services_path, data: { method: :post, params: { type: 'MusicScrobbleService', app: 'LastFm' } }

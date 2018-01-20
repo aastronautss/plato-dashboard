@@ -3,6 +3,10 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
+  resources :external_services, only: [:index, :create] do
+    get :confirm, to: 'external_services/confirmed#create'
+  end
+
   namespace :api, defaults: { format: :json } do
     namespace :music_downloads do
       resources :services, only: [:index, :create] do

@@ -9,14 +9,6 @@ class ExternalService < ApplicationRecord
   validates :type, presence: true
   validates :app, presence: true
 
-  class << self
-    def apps
-      self.const_get 'APPS'
-    end
-
-    alias available_services apps
-  end
-
   def adapter
     @adapter ||= _adapter
   end

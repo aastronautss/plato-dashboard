@@ -13,8 +13,8 @@ RSpec.describe MusicDownloadService do
 
     let(:action) { subject.apps }
 
-    it 'returns an array' do
-      expect(action).to be_an(Array)
+    it 'returns a hash' do
+      expect(action).to be_a(Hash)
     end
   end
 
