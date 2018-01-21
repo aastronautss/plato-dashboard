@@ -13,13 +13,11 @@ module LastFm
       end
 
       def generate_auth_url(callback_url: nil)
-        token = generate_token
-
-        "http://www.last.fm/api/auth/?api_key=#{api_key}&token=#{token}&cb=#{callback_url}"
+        "https://www.last.fm/api/auth/?api_key=#{api_key}&cb=#{callback_url}"
       end
 
-      def generate_token
-        new_client.auth.get_token
+      def fetch_new_session_data(token)
+        new_client.auth.get_session(token: token)
       end
 
       private
@@ -34,18 +32,14 @@ module LastFm
     end
 
     def initialize(service)
+      @service = service
       @client = self.class.new_client
-      @token = service.data[:token]
 
-      set_session!
+      client.session = service.data[:session]
     end
 
     private
 
-    attr_reader :client
-
-    def set_session!
-      client.session = client.auth.get_session(token: token)['key']
-    end
+    attr_reader :client, :service
   end
 end

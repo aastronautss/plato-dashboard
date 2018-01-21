@@ -7,8 +7,6 @@ class ExternalServicesController < ApplicationController
 
   def create
     service = CreateLastFmService.new.call
-    @external_service_activation_url = service.auth_url
-
-    render :index
+    redirect_to service.auth_url
   end
 end

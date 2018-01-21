@@ -9,12 +9,12 @@ module LastFm
       LastFm::Adapter.new(*args)
     end
 
-    def generate_token
-      LastFm::Adapter.generate_token
-    end
-
     def generate_auth_url(*args)
       LastFm::Adapter.generate_auth_url(*args)
+    end
+
+    def fetch_new_session_data(token)
+      LastFm::Adapter.fetch_new_session_data(token)
     end
   end
 end

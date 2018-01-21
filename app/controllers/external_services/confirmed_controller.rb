@@ -4,7 +4,8 @@ class ExternalServices::ConfirmedController < ApplicationController
   before_action :set_service
 
   def create
-    @service.update confirmed: true
+    token = params[:token]
+    ConfirmLastFmService.new(@service, token).call
 
     redirect_to external_services_path
   end

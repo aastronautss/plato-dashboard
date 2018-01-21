@@ -3,17 +3,17 @@
 class CreateLastFmService
   include Rails.application.routes.url_helpers
 
+  APP_NAME = 'LastFm'
   DEFAULT_LABEL = 'last.fm'
 
   attr_reader :auth_url
 
-  def initialize(label = DEFAULT_LABEL)
+  def initialize(label: DEFAULT_LABEL)
     @label = label
   end
 
   def call
-    callback_url = external_service_confirm_url(service.id)
-    @auth_url = LastFm.generate_auth_url(callback_url: CGI.escape(callback_url))
+    @auth_url = LastFm.generate_auth_url(callback_url: callback_url)
 
     self
   end
@@ -22,13 +22,11 @@ class CreateLastFmService
 
   attr_reader :label
 
-  def token
-    @token ||= LastFm.generate_token
+  def service
+    @service ||= MusicScrobbleService.create(app: APP_NAME, label: label, data: {})
   end
 
-  def service
-    @service ||= MusicScrobbleService.create(
-      app: 'LastFm', label: label, confirmed: true, data: { token: token }
-    )
+  def callback_url
+    external_service_confirm_url(service.id)
   end
 end

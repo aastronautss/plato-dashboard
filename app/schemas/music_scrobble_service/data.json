@@ -2,7 +2,7 @@
   "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
   "properties": {
-    "token": { "type": "string" }
-  },
-  "required": ["token"]
+    "session": { "type": "string" },
+    "username": { "type": "string" }
+  }
 }

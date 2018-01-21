@@ -10,4 +10,8 @@ class MusicScrobbleService < ExternalService
   enum app: APPS
 
   validates :data, json: { schema: DATA_JSON_SCHEMA }
+
+  def confirmed?
+    data[:session].present?
+  end
 end
