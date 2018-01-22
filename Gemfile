@@ -28,15 +28,16 @@ gem 'activerecord_json_validator'
 gem 'bcrypt', '~> 3.1.7'
 gem 'hashie'
 gem 'turbolinks', '~> 5'
+gem 'upsert', '~> 2.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # API Gems
 gem 'hphones-ruby', github: 'aastronautss/hphones-ruby', branch: 'master'
+gem 'lastfm', github: 'aastronautss/lastfm-ruby', branch: 'master'
 gem 'rdarr', github: 'aastronautss/rdarr-ruby', branch: 'master'
 gem 'snarr', github: 'aastronautss/snarr-ruby', branch: 'master'
-gem 'lastfm', github: 'aastronautss/lastfm-ruby', branch: 'master'
 
 group :development, :test do
   gem 'rspec-rails'
