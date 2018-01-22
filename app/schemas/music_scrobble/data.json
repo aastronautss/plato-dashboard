@@ -2,5 +2,29 @@
   "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
   "properties": {
-  },
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+
+    "artist": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+
+    "album": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+
+    "url": { "type": "string" },
+    "image_url": { "type": "string" },
+    "image_thumbnail_url": { "type": "string" }
+  }
 }

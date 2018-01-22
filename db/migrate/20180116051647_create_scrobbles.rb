@@ -14,5 +14,11 @@ class CreateScrobbles < ActiveRecord::Migration[5.1]
     add_index :scrobbles, :type
     add_index :scrobbles, :external_service_id
     add_index :scrobbles, :scrobbled_at
+    add_index :scrobbles, [:external_service_id, :scrobbled_at], unique: true
+
+    execute <<~SQL
+      ALTER TABLE scrobbles
+        ADD CONSTRAINT for_upsert UNIQUE (external_service_id, scrobbled_at);
+    SQL
   end
 end

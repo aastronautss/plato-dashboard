@@ -12,6 +12,14 @@ class MusicScrobbleService < ExternalService
   validates :data, json: { schema: DATA_JSON_SCHEMA }
 
   def confirmed?
-    data[:session].present?
+    session.present?
+  end
+
+  def session
+    data[:session]
+  end
+
+  def username
+    data[:username]
   end
 end

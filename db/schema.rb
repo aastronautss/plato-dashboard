@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20180116051647) do
     t.datetime "scrobbled_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["external_service_id", "scrobbled_at"], name: "for_upsert", unique: true
+    t.index ["external_service_id", "scrobbled_at"], name: "index_scrobbles_on_external_service_id_and_scrobbled_at", unique: true
     t.index ["external_service_id"], name: "index_scrobbles_on_external_service_id"
     t.index ["scrobbled_at"], name: "index_scrobbles_on_scrobbled_at"
     t.index ["type"], name: "index_scrobbles_on_type"

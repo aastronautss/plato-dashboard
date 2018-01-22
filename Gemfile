@@ -24,11 +24,11 @@ gem 'webpacker'
 gem 'redis', '~> 4.0'
 gem 'sidekiq', '~> 5.0'
 
+gem 'activerecord-import'
 gem 'activerecord_json_validator'
 gem 'bcrypt', '~> 3.1.7'
 gem 'hashie'
 gem 'turbolinks', '~> 5'
-gem 'upsert', '~> 2.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

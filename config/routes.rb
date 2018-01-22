@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   root to: 'pages#home'
+
+  mount Sidekiq::Web => '/sidekiq'
 
   resources :external_services, only: [:index, :create] do
     get :confirm, to: 'external_services/confirmed#create'

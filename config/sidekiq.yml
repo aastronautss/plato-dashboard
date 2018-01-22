@@ -1,0 +1,8 @@
+---
+:concurrency: 10
+production:
+  :concurrency: 10
+:queues:
+  - default
+  - [scrobble_fetch, 2]
+  - [scrobble_process, 1]
