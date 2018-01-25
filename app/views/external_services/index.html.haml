@@ -1,8 +1,21 @@
-%h2 Music Scrobbles
-%ul
-  - @music_scrobble_services.each do |service|
-    %li
-      %h3
-        = service.label
-        %small.text-muted= "#{service.username} - #{service.confirmed? ? 'Confirmed' : 'Not confirmed'}"
-%p= link_to 'Add account', external_services_path, data: { method: :post, params: { type: 'MusicScrobbleService', app: 'LastFm' } }
+%div
+  %h2 Music Scrobbles
+  %ul
+    - @music_scrobble_services.each do |service|
+      %li
+        %h3
+          = service.label
+          %small.text-muted= "#{service.username} - #{service.confirmed? ? 'Confirmed' : 'Not confirmed'}"
+  %h3 Add account
+  %p= link_to 'last.fm', external_services_path(service: 'lastfm'), data: { method: :post }
+
+%div
+  %h2 Activity
+  %ul
+    - @activity_services.each do |service|
+      %li
+        %h3
+          = service.label
+          %small.text-muted= "#{service.username} - #{service.confirmed? ? 'Confirmed' : 'Not confirmed'}"
+  %h3 Add account
+  %p= link_to 'RescueTime', external_services_path(service: 'rescuetime'), data: { method: :post }

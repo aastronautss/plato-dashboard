@@ -1,0 +1,21 @@
+{
+  "type": "array",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "items": {
+    "type": "object",
+    "properties": {
+      "activity": { "type": "string", "description": "The activity performed (e.g. 'Sublime Text')" },
+      "category": { "type": "string", "description": "The category of the activity (e.g. 'Software development')" },
+      "type": { "type": "string", "description": "The type of activity performed (e.g. 'Computer', 'Workout')" },
+
+      "time_spent": { "type": "integer", "description": "The amount of time spent doing this activity in seconds" },
+      "score": {
+        "type": "integer",
+        "minimum": -2,
+        "maximum": 2,
+        "description": "The productivity rating of this activity"
+      }
+    },
+    "required": ["activity", "type", "time_spent", "score"]
+  }
+}

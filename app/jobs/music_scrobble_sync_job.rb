@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class MusicScrobbleSyncJob < ApplicationJob
-  queue_as :default
+  queue_as :scrobble_sync
 
   def perform
     services = MusicScrobbleService.all

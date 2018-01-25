@@ -36,6 +36,7 @@ gem 'turbolinks', '~> 5'
 # API Gems
 gem 'hphones-ruby', github: 'aastronautss/hphones-ruby', branch: 'master'
 gem 'lastfm', github: 'aastronautss/lastfm-ruby', branch: 'master'
+gem 'rescuetime', github: 'aastronautss/rescuetime', branch: 'master'
 gem 'rdarr', github: 'aastronautss/rdarr-ruby', branch: 'master'
 gem 'snarr', github: 'aastronautss/snarr-ruby', branch: 'master'
 

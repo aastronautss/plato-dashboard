@@ -25,6 +25,13 @@ GIT
     rdarr (0.0.1)
 
 GIT
+  remote: https://github.com/aastronautss/rescuetime.git
+  revision: beb4553d062730694a98bff4dd77917c2cc9df49
+  branch: master
+  specs:
+    rescuetime (1.0.0)
+
+GIT
   remote: https://github.com/aastronautss/snarr-ruby.git
   revision: bd255f565531b2e1c9c02c2c4fe8ff7a2cb28987
   branch: master
@@ -261,7 +268,7 @@ GEM
     turbolinks-source (5.1.0)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    uglifier (4.1.3)
+    uglifier (4.1.4)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.3.0)
     vcr (4.0.0)
@@ -305,6 +312,7 @@ DEPENDENCIES
   rails-controller-testing
   rdarr!
   redis (~> 4.0)
+  rescuetime!
   rspec-rails
   rubocop
   sass-rails (~> 5.0)
