@@ -2,24 +2,25 @@
 
 class CreateService
   SERVICES = {
-    lastfm: CreateLastFmService
+    lastfm: CreateLastFmService,
+    rescuetime: CreateRescueTimeService
   }
 
   def initialize(service_id, params = {})
-    @service = lookup service_id
+    @service_creator = lookup service_id
     @params = params
   end
 
   def call
-    new_service = service.new(params)
-    new_service.call
+    creator = service_creator.new(params)
+    new_service = creator.call
 
     new_service
   end
 
   private
 
-  attr_reader :service, :params
+  attr_reader :service_creator, :params
 
   def lookup(service_id)
     SERVICES[service_id.to_sym]

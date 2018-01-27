@@ -3,7 +3,10 @@
 class ExternalServicesController < ApplicationController
   def index
     @music_scrobble_services = MusicScrobbleService.all
-    @activity_services = []
+    @activity_services = ActivityScrobbleService.all
+
+    @new_music_scrobble_service = MusicScrobbleService.new
+    @new_rescue_time_service = RescueTimeService.new
   end
 
   def create
@@ -14,6 +17,6 @@ class ExternalServicesController < ApplicationController
   private
 
   def external_service_params
-    params.require(:external_service).permit()
+    params.require(:external_service).permit(:label, data: {})
   end
 end

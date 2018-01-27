@@ -7,7 +7,14 @@
           = service.label
           %small.text-muted= "#{service.username} - #{service.confirmed? ? 'Confirmed' : 'Not confirmed'}"
   %h3 Add account
-  %p= link_to 'last.fm', external_services_path(service: 'lastfm'), data: { method: :post }
+  = form_for @new_music_scrobble_service, as: :external_service, url: { controller: :external_services } do |f|
+    %h4 last.fm
+    = hidden_field_tag 'service', 'lastfm'
+
+    = f.label :label
+    = f.text_field :label, value: 'last.fm'
+
+    = f.submit 'Add', class: 'btn btn-default'
 
 %div
   %h2 Activity
@@ -16,6 +23,17 @@
       %li
         %h3
           = service.label
-          %small.text-muted= "#{service.username} - #{service.confirmed? ? 'Confirmed' : 'Not confirmed'}"
+          %small.text-muted= "#{service.confirmed? ? 'Confirmed' : 'Not confirmed'}"
   %h3 Add account
-  %p= link_to 'RescueTime', external_services_path(service: 'rescuetime'), data: { method: :post }
+  = form_for @new_rescue_time_service, as: :external_service, url: { controller: :external_services } do |f|
+    %h4 RescueTime
+    = hidden_field_tag 'service', 'rescuetime'
+
+    = f.label :label
+    = f.text_field :label, value: 'RescueTime'
+
+    = f.fields_for :data do |data_f|
+      = data_f.label :api_key
+      = data_f.text_field :api_key
+
+    = f.submit 'Add', class: 'btn btn-default'
