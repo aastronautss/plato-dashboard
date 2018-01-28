@@ -6,6 +6,15 @@ module IndifferentDataColumn
   extend ActiveSupport::Concern
 
   def data
-    read_attribute(:data)&.with_indifferent_access
+    attribute = read_attribute(:data)
+
+    case attribute
+    when Hash
+      attribute.with_indifferent_access
+    when Array
+      attribute.map &:with_indifferent_access
+    else
+      attribute
+    end
   end
 end

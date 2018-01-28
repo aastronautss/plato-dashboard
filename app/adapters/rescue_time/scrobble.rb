@@ -2,8 +2,8 @@
 
 module RescueTime
   class Scrobble
-    UNCATEGORIZED_CATEGORY = 'uncategorized'
-    SCROBBLE_TYPE = 'computer'
+    UNCATEGORIZED_CATEGORY = 'Uncategorized'
+    SCROBBLE_TYPE = 'Computer'
 
     class << self
       def from_api(service, api_props = [])

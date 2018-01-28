@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/aastronautss/rescuetime.git
-  revision: beb4553d062730694a98bff4dd77917c2cc9df49
+  revision: f6edbe7c20e85b725b3444fcc187cace9f7e6363
   branch: master
   specs:
     rescuetime (1.0.0)
