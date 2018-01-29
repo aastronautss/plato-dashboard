@@ -7,7 +7,6 @@ class ExternalService < ApplicationRecord
   include IndifferentDataColumn
 
   validates :type, presence: true
-  validates :app, presence: true
 
   def adapter
     @adapter ||= _adapter
@@ -16,7 +15,6 @@ class ExternalService < ApplicationRecord
   private
 
   def _adapter
-    klass = Object.const_get(app)
-    klass.new(self)
+    self.class.const_get('ADAPTER').new(self)
   end
 end

@@ -13,7 +13,7 @@ module RescueTime
 
           times[time] << {
             activity: activity[:activity],
-            category: activity[:category] || 'uncategorized',
+            category: activity[:category] || UNCATEGORIZED_CATEGORY,
             type: SCROBBLE_TYPE,
 
             time_spent: activity[:time_spent_seconds],

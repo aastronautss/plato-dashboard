@@ -37,3 +37,21 @@
       = data_f.text_field :api_key
 
     = f.submit 'Add', class: 'btn btn-default'
+
+%div
+  %h2 Location
+  %ul
+    - @moves_services.each do |service|
+      %li
+        %h3
+          = service.label
+          %small.text-muted= "#{service.confirmed? ? 'Confirmed' : 'Not confirmed'}"
+  %h3 Add account
+  = form_for @new_moves_service, as: :external_service, url: { controller: :external_services } do |f|
+    %h4 Moves
+    = hidden_field_tag 'service', 'moves'
+
+    = f.label :label
+    = f.text_field :label, value: 'Moves'
+
+    = f.submit 'Add', class: 'btn btn-default'

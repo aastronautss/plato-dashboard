@@ -28,14 +28,18 @@ gem 'activerecord-import'
 gem 'activerecord_json_validator'
 gem 'bcrypt', '~> 3.1.7'
 gem 'hashie'
+gem 'oauth2'
 gem 'turbolinks', '~> 5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # API Gems
+gem 'foursquare2'
 gem 'hphones-ruby', github: 'aastronautss/hphones-ruby', branch: 'master'
+gem 'koala', '~> 3'
 gem 'lastfm', github: 'aastronautss/lastfm-ruby', branch: 'master'
+gem 'moves', github: 'aastronautss/moves-ruby', branch: 'master'
 gem 'rescuetime', github: 'aastronautss/rescuetime', branch: 'master'
 gem 'rdarr', github: 'aastronautss/rdarr-ruby', branch: 'master'
 gem 'snarr', github: 'aastronautss/snarr-ruby', branch: 'master'

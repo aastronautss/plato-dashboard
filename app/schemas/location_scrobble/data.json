@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "properties": {
+    "type": { "type": "string" },
+
+    "begin_time": { "type": "string" },
+    "end_time": { "type": "string" },
+
+    "place_id": { "type": "integer" },
+    "place_name": { "type": "string" },
+    "place_type": { "type": "string" },
+    "place_coords": {
+      "type": "object",
+      "properties": {
+        "lat": { "type": "number" },
+        "lon": { "type": "number" }
+      }
+    },
+
+    "data_points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "activity": { "type": "string" },
+
+          "begin_time": { "type": "string" },
+          "end_time": { "type": "string" },
+
+          "duration": { "type": "number" },
+          "distance": { "type": "number" },
+
+          "coords": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "lat": { "type": "number" },
+                "lon": { "type": "number" },
+                "time": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["type", "begin_time", "end_time"]
+}

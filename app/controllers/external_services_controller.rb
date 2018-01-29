@@ -3,10 +3,12 @@
 class ExternalServicesController < ApplicationController
   def index
     @music_scrobble_services = MusicScrobbleService.all
-    @activity_services = ActivityScrobbleService.all
+    @activity_services = RescueTimeService.all
+    @moves_services = MovesService.all
 
     @new_music_scrobble_service = MusicScrobbleService.new
     @new_rescue_time_service = RescueTimeService.new
+    @new_moves_service = MovesService.new
   end
 
   def create
