@@ -27,6 +27,6 @@ class CreateLastFmService
   end
 
   def callback_url
-    external_service_confirm_url(service.id)
+    confirm_external_services_url(external_service_id: service.id)
   end
 end

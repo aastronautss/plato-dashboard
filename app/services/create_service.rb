@@ -4,7 +4,8 @@ class CreateService
   SERVICES = {
     lastfm: CreateLastFmService,
     rescuetime: CreateRescueTimeService,
-    moves: CreateMovesService
+    moves: CreateMovesService,
+    facebook: CreateFacebookService
   }
 
   def initialize(service_id, params = {})

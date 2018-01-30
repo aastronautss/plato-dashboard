@@ -2,7 +2,6 @@
 
 FactoryBot.define do
   factory :music_download_service do
-    app MusicDownloadService::APPS.sample
     data do
       {
         host: ENV['HEADPHONES_HOST'],

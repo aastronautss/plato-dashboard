@@ -5,10 +5,12 @@ class ExternalServicesController < ApplicationController
     @music_scrobble_services = MusicScrobbleService.all
     @activity_services = RescueTimeService.all
     @moves_services = MovesService.all
+    @social_services = FacebookService.all
 
     @new_music_scrobble_service = MusicScrobbleService.new
     @new_rescue_time_service = RescueTimeService.new
     @new_moves_service = MovesService.new
+    @new_facebook_service = FacebookService.new
   end
 
   def create

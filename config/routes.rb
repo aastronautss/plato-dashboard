@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   resources :external_services, only: [:index, :create] do
-    get :confirm, to: 'external_services/confirmed#create'
+    collection do
+      get :confirm, to: 'external_services/confirmed#create'
+    end
   end
 
   namespace :api, defaults: { format: :json } do

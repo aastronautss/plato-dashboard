@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateMovesService
+class CreateFacebookService
   include Rails.application.routes.url_helpers
 
   attr_reader :auth_url
@@ -25,11 +25,11 @@ class CreateMovesService
   end
 
   def create_service
-    @service = MovesService.create(label: label, data: {})
+    @service = FacebookService.create(label: label, data: {})
   end
 
   def set_auth_url
-    @auth_url = MovesWrapper.generate_auth_url(callback_url: callback_url)
+    @auth_url = Facebook.generate_auth_url(callback_url: callback_url)
   end
 
   def callback_url
