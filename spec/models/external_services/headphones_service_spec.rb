@@ -2,20 +2,9 @@
 
 require 'rails_helper'
 
-RSpec.describe MusicDownloadService do
+RSpec.describe HeadphonesService do
   subject do
-    MusicDownloadService.new app: 'Headphones',
-      data: { host: 'localhost', port: 123, http_root: 'abc', api_key: 'abc123' }
-  end
-
-  describe '.apps' do
-    subject { MusicDownloadService }
-
-    let(:action) { subject.apps }
-
-    it 'returns a hash' do
-      expect(action).to be_a(Hash)
-    end
+    HeadphonesService.new data: { host: 'localhost', port: 123, http_root: 'abc', api_key: 'abc123' }
   end
 
   describe '#host' do

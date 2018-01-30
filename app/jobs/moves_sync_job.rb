@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+##
+# Job to sync all Moves location scrobbles with local database.
+#
 class MovesSyncJob < ApplicationJob
   queue_as :scrobble_sync
 

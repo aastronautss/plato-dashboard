@@ -3,11 +3,9 @@
 ##
 # A STI class for ExternalService that encompasses the logic for music download services.
 #
-class MusicDownloadService < ExternalService
-  APPS = %w[Headphones].freeze
-  DATA_JSON_SCHEMA = Rails.root.join('app', 'schemas', 'music_download_service', 'data.json').to_s.freeze
-
-  enum app: APPS
+class HeadphonesService < ExternalService
+  ADAPTER = Headphones
+  DATA_JSON_SCHEMA = Rails.root.join('app', 'schemas', 'headphones_service', 'data.json').to_s.freeze
 
   validates :data, json: { schema: DATA_JSON_SCHEMA }
 

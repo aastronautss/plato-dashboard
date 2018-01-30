@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Api::MusicDownloads::ArtistRegistrationsController do
-  let(:service) { create :music_download_service }
+  let(:service) { create :headphones_service }
 
   describe 'GET :index', :vcr do
     let(:action) { get :index, format: :json, params: { service_id: service.id } }

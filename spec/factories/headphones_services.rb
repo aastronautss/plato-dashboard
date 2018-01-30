@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :music_download_service do
+  factory :headphones_service do
     data do
       {
         host: ENV['HEADPHONES_HOST'],

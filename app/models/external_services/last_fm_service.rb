@@ -3,9 +3,9 @@
 ##
 # A STI class for ExternalService that encompasses the logic for music download services.
 #
-class MusicScrobbleService < ExternalService
+class LastFmService < ExternalService
   ADAPTER = LastFm
-  DATA_JSON_SCHEMA = Rails.root.join('app', 'schemas', 'music_scrobble_service', 'data.json').to_s.freeze
+  DATA_JSON_SCHEMA = Rails.root.join('app', 'schemas', 'last_fm_service', 'data.json').to_s.freeze
 
   validates :data, json: { schema: DATA_JSON_SCHEMA }
 

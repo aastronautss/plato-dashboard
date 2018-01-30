@@ -5,13 +5,13 @@
 #
 class Api::MusicDownloads::ServicesController < Api::ApplicationController
   def index
-    @services = MusicDownloadService.all
+    @services = HeadphonesService.all
 
     render json: @services
   end
 
   def create
-    @service = MusicDownloadService.new service_params
+    @service = HeadphonesService.new service_params
 
     if @service.save
       render json: @service

@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe ConfirmLastFmService, vcr: { match_requests_on: [:method, :host] } do
-  let(:service) { build :music_scrobble_service }
+  let(:service) { build :last_fm_service }
   let(:token) { ENV['LASTFM_DUMMY_TOKEN'] }
   subject { ConfirmLastFmService.new service, token }
 

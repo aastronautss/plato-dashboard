@@ -23,7 +23,7 @@ class CreateLastFmService
   attr_reader :label
 
   def service
-    @service ||= MusicScrobbleService.create(app: APP_NAME, label: label, data: {})
+    @service ||= LastFmService.create(label: label, data: {})
   end
 
   def callback_url

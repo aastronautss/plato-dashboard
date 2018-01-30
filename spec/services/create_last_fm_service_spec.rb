@@ -14,7 +14,7 @@ RSpec.describe CreateLastFmService do
     end
 
     it 'creates a MusicScrobbleService' do
-      expect { action }.to change { MusicScrobbleService.count }.by(1)
+      expect { action }.to change { LastFmService.count }.by(1)
     end
   end
 end

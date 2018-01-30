@@ -94,7 +94,8 @@ module MovesWrapper
 
       def fetch_place_type_from_facebook(facebook_place_id)
         place_properties = Facebook.new.get_place facebook_place_id
-        place_properties['category_list'].min_by { |category| category['id'].to_i }
+        category = place_properties['category_list'].min_by { |category| category['id'].to_i }
+        category['name']
       rescue Facebook::Adapter::InvalidPlaceError => e
         PLACE_T_DEFAULT
       end

@@ -6,7 +6,7 @@ RSpec.describe Headphones do
   describe '.new' do
     subject { Headphones }
 
-    let(:service) { build_stubbed :music_download_service }
+    let(:service) { build_stubbed :headphones_service }
     let(:action) { subject.new service }
 
     it 'returns an Adapter' do

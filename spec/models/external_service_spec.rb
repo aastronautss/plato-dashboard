@@ -5,11 +5,10 @@ require 'rails_helper'
 RSpec.describe ExternalService do
   describe 'validations' do
     it { should validate_presence_of(:type) }
-    it { should validate_presence_of(:app) }
   end
 
   describe '#data' do
-    let(:service) { build :music_download_service }
+    let(:service) { build :headphones_service }
     let(:action) { service.data }
 
     it 'allows indifferent access' do
@@ -18,7 +17,7 @@ RSpec.describe ExternalService do
   end
 
   describe '#adapter' do
-    let(:service) { build :music_download_service, app: 'Headphones' }
+    let(:service) { build :headphones_service }
     let(:action) { service.adapter }
 
     it 'returns an instance of the corresponding adapter' do

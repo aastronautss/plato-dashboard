@@ -6,7 +6,7 @@ RSpec.describe LastFm, :vcr do
   subject { LastFm }
 
   describe '.new' do
-    let(:service) { build_stubbed :music_scrobble_service }
+    let(:service) { build_stubbed :last_fm_service }
     let(:action) { subject.new service }
 
     it 'returns an Adapter' do

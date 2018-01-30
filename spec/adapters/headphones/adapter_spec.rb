@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Headphones::Adapter, :vcr do
-  let(:service) { build_stubbed :music_download_service }
+  let(:service) { build_stubbed :headphones_service }
 
   subject { Headphones::Adapter.new service }
 

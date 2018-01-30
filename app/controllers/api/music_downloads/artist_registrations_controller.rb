@@ -27,7 +27,7 @@ class Api::MusicDownloads::ArtistRegistrationsController < Api::ApplicationContr
   private
 
   def set_service
-    @service = MusicDownloadService.find params[:service_id]
+    @service = HeadphonesService.find params[:service_id]
   end
 
   def registration_params

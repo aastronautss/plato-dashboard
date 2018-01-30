@@ -6,7 +6,7 @@ RSpec.describe Api::MusicDownloads::ServicesController do
   describe 'GET :index' do
     let(:action) { get :index, format: :json }
 
-    before { create :music_download_service }
+    before { create :headphones_service }
 
     it_behaves_like 'an instance variable setter', :services
 
@@ -17,7 +17,7 @@ RSpec.describe Api::MusicDownloads::ServicesController do
   end
 
   describe 'POST :create' do
-    let(:params) { { music_download_service: attributes_for(:music_download_service) } }
+    let(:params) { { music_download_service: attributes_for(:headphones_service) } }
     let(:action) { post :create, format: :json, params: params }
 
     it_behaves_like 'an instance variable setter', :service

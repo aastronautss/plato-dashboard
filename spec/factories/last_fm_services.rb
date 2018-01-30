@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :music_scrobble_service do
+  factory :last_fm_service do
     data do
       {
         token: ENV['LASTFM_DUMMY_TOKEN']
