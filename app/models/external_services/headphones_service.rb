@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ##
-# A STI class for ExternalService that encompasses the logic for music download services.
+# Data relating to the Headphones service
 #
 class HeadphonesService < ExternalService
   ADAPTER = Headphones

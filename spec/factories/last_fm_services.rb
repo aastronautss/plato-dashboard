@@ -2,10 +2,15 @@
 
 FactoryBot.define do
   factory :last_fm_service do
-    data do
-      {
-        token: ENV['LASTFM_DUMMY_TOKEN']
-      }
+    data { {} }
+
+    trait :confirmed do
+      data do
+        {
+          session: ENV['LASTFM_DUMMY_TOKEN'],
+          username: ENV['LASTFM_DUMMY_USERNAME']
+        }
+      end
     end
   end
 end

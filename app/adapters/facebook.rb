@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+##
+# Top-level namespace for Facebook
+#
 module Facebook
   class << self
     def new(*args)

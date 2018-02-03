@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+##
+# Top-level namespace for the Moves API adapter
+#
 module MovesWrapper
   class << self
     def new(*args)
