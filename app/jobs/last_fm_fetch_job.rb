@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class MusicScrobbleServiceSyncJob < ApplicationJob
+class LastFmFetchJob < ApplicationJob
   API_CALL_INTERVAL = 0.3
 
   queue_as :scrobble_fetch

@@ -6,11 +6,11 @@ class RescueTimeService < ExternalService
 
   validates :data, json: { schema: DATA_JSON_SCHEMA }
 
-  def api_key
-    data[:api_key]
-  end
-
   def confirmed?
     api_key.present?
+  end
+
+  def api_key
+    data[:api_key]
   end
 end

@@ -3,9 +3,9 @@
 class ConfirmMovesService
   include Rails.application.routes.url_helpers
 
-  def initialize(service, callback_code)
+  def initialize(service, params)
     @service = service
-    @callback_code = callback_code
+    @callback_code = params[:code]
   end
 
   def call

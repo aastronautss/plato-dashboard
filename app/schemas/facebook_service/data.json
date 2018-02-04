@@ -2,6 +2,7 @@
   "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
   "properties": {
-    "api_key": { "type": "string" }
+    "access_token": { "type": "string" },
+    "access_token_expires_on": { "type": "string" }
   }
 }

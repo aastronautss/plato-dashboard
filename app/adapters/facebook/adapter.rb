@@ -4,10 +4,13 @@ module Facebook
   class Adapter
     class InvalidPlaceError < StandardError; end
 
+    PERMISSIONS = %w[email public_profile user_posts user_photos]
+    PLACE_FIELDS = %w[name description category_list]
+
     class << self
       def generate_auth_url(callback_url: nil)
         oauth_client.url_for_oauth_code(
-          permissions: %w[email public_profile user_posts user_photos],
+          permissions: PERMISSIONS,
           redirect_uri: callback_url
         )
       end
@@ -36,7 +39,7 @@ module Facebook
     end
 
     def get_place(place_id)
-      client.get_object place_id, fields: ['name', 'description', 'category_list']
+      client.get_object place_id, fields: PLACE_FIELDS
     rescue Koala::Facebook::ClientError => e
       raise InvalidPlaceError, e.message
     end

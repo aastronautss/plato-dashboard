@@ -33,7 +33,14 @@ module MovesWrapper
 
     def initialize(service)
       @service = service
-      @client = self.class.new_client(service.access_token)
+      set_client
+    end
+
+    def confirm(params)
+      result = ConfirmMovesService.new(service, params).call
+      set_client
+
+      result
     end
 
     def get_scrobbles(from: Date.today, to: Date.today)
@@ -54,5 +61,9 @@ module MovesWrapper
     private
 
     attr_reader :client, :service
+
+    def set_client
+      @client = self.class.new_client(service.access_token)
+    end
   end
 end
